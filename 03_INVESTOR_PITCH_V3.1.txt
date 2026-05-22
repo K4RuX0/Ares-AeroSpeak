@@ -4,18 +4,20 @@ Problem: Chemical Mars = 9 months, $200M+ per crew, high radiation risks.
 Solution: 680kN (4x 170kN NTR Cluster) Nuclear Aerospike Freighter, 125-day transit.
 
 Technical Edge:
-- Thrust: 4x 170kN NTR = 680kN Total | Isp: 780s | T/W: 0.61
-- Pad Mass: 113.3t | Height: 18.9m | Diameter: 9m (Standard Starship Integration)
+- Thrust: 4x 170kN NTR = 680kN | Isp: 780s | T/W: 0.51 
+- Pad Mass: 1455.3t | Height: 84.6m | Diameter: 9m (Standard Starship Integration)
 - Crew Count: 6 | Shielding: 20g/cm² | Power: 100kWe
 - Mission Window: 776 days | Habitat: 380m³ ATHENA Module
 - Heritage: NERVA + 10CFR52 / ITAR Compliant
+- Redundancy: Engine-out abort to LEO with 3x NTR
 
 Business Case:
-- Fleet Asset Valuation: $ 142.7M Unit Production Cost (Saved $69M vs 8-engine concept)
-- Saves $4.2B per Mars mission vs traditional chemical fuels
+- Fleet Asset Valuation: $126.2M Unit Production Cost
+- Saves $3.8B per Mars mission vs traditional chemical fuels
+- Payload TMI: 71t per mission
 - Target Market: NASA deep space assets, DoD Logistics, Space Force
 
-Ask: $20M Seed Funding -> TRL-4 170kN demonstrator prototype in 18mo
+Ask: $22M Seed Funding -> TRL-4 170kN demonstrator + 4x cluster CFD in 18mo
 Milestone: 300s hot-fire validation with NASA/DOE labs
 
 Contact: Ranyellson Quintão
