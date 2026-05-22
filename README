@@ -175,6 +175,7 @@ For that reason, the values in this document should be interpreted as target arc
 ## 11. Repository Structure
 /
 ├── README.md
+├── LICENSE
 ├── docs/
 │   ├── mission_concept.md
 │   ├── assumptions.md
