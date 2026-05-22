@@ -1,22 +1,24 @@
-# ARES-STARSHIP V3.2 — Prometheus I Mission
+# ARES-STARSHIP V3.2BR — Prometheus I Mission
 
 **Manned Interplanetary Freighter with Nuclear-Thermal Aerospike Propulsion**  
-`CLASSIFICATION: OFFICIAL USE | AUTHOR: RANYELLSON QUINTÃO | DATE: 05/22/2026`
+`CLASSIFICATION: OFFICIAL USE | AUTHOR: RANYELLSON QUINTÃO | DATE: 05/22/2026 | LAUNCH SITE: ALCÂNTARA, BRAZIL`
 
-> ARES V3.2 is not designed to carry six people to Mars. It is designed to extend human civilization beyond Earth — with a round trip on a single tank.
+> ARES V3.2BR is not designed to carry six people to Mars. It is designed to extend human civilization beyond Earth — with a round trip on a single tank, launched from the equator.
 
 ## Mission Summary: Prometheus I
 
 | Parameter | Value |
 | --- | --- |
 | **Objective** | Transport 6 crew + 71 t payload to Mars orbit with Earth return, no refuel |
+| **Launch Site** | Alcântara Space Center, Brazil (2.3°S) |
+| **Launch Architecture** | Chemical booster to 400 km LEO, NTR ignition in vacuum only |
 | **Total Duration** | 776 days |
-| **Vehicle** | ARES-STARSHIP V3.2 — Reusable NTR Interplanetary Freighter |
+| **Vehicle** | ARES-STARSHIP V3.2BR — Reusable NTR Interplanetary Freighter |
 | **Launch Window** | 2034 |
 
 ## 1. Vehicle Overview
 
-ARES-STARSHIP V3.2 is a conceptual reusable interplanetary transport vehicle designed for crewed Mars missions with return capability. The architecture combines nuclear-thermal propulsion, aerospike nozzle efficiency, and a long-duration habitation module optimized for deep-space operations.
+ARES-STARSHIP V3.2BR is a conceptual reusable interplanetary transport vehicle designed for crewed Mars missions with return capability. The architecture combines nuclear-thermal propulsion, aerospike nozzle efficiency, and a long-duration habitation module optimized for deep-space operations.
 
 ### 1.1 General Specifications
 | Parameter | Value | Note |
@@ -28,11 +30,12 @@ ARES-STARSHIP V3.2 is a conceptual reusable interplanetary transport vehicle des
 | Payload to TMI | 71 t | Post-TMI injection toward Mars |
 | Payload to Mars Surface | 45 t | After MOI and EDL losses |
 | Crew | 6 | Long-duration mission |
+| Earth Rotation Bonus | +463 m/s | Equatorial launch advantage |
 
 ### 1.2 Propulsion System
 1. **Configuration**: 4x NTR units producing 185 kN each, for a total of 740 kN in vacuum.
 2. **Core**: Low-enriched uranium in a UC-ZrC-NbC matrix, operating at 3100 K.
-3. **Propellant**: Liquid hydrogen stored at 20 K.
+3. **Propellant**: Liquid hydrogen stored at 20 K with regenerative cooling.
 4. **Vacuum Isp**: 920 s.
 5. **Nozzle**: Truncated linear aerospike with carbon-carbon structure and NbC coating, 1350K wall.
 6. **Advantages**: Altitude compensation, differential thrust vectoring, and improved high-vacuum performance.
@@ -65,10 +68,10 @@ ARES-STARSHIP V3.2 is a conceptual reusable interplanetary transport vehicle des
 ## 3. Mission Profile
 
 ### Phase 1 — LEO Assembly | T+0 to T+30
-Four launches assemble the ARES vehicle and crew in 400 km orbit. Twelve tanker flights deliver the liquid hydrogen required for trans-Mars injection.
+Four launches from Alcântara assemble the ARES vehicle and crew in 400 km orbit. Twelve tanker flights deliver the liquid hydrogen required for trans-Mars injection. NTR remains cold until orbital checkout.
 
 ### Phase 2 — Trans-Mars Injection | T+31
-A 28 minute burn places the vehicle on its interplanetary trajectory. The propulsion system delivers 14.57 km/s total delta-v with 370 m/s margin.
+A 28 minute burn places the vehicle on its interplanetary trajectory. The propulsion system delivers 14.57 km/s total delta-v with 833 m/s margin (including 463 m/s Alcântara bonus).
 
 ### Phase 3 — Cruise | T+32 to T+150
 The vehicle enters a 119 day cruise phase. Artificial gravity is maintained through rotation, and storm shelter procedures remain active throughout transit.
@@ -100,18 +103,18 @@ The return sequence begins with departure burn, followed by cruise, Earth arriva
 2. **Scientific Value**: Supports high-capacity planetary science, biology, and habitat development on Mars.
 3. **Civilizational Value**: Expands humanity beyond a single planetary surface.
 4. **Industrial Value**: Creates a framework for reusable interplanetary transport and supporting infrastructure.
-5. **Geopolitical Value**: Establishes a technological foundation for cislunar and Martian operations.
+5. **Geopolitical Value**: Establishes Brazil as equatorial launch hub for cislunar and Martian operations.
 
 ## 6. Premises and Scope
 
 This repository presents a conceptual systems-engineering study. The mission architecture, performance numbers, and operational assumptions are early-stage estimates intended for analysis, iteration, and future validation.
 
 ### Main Premises
-- Mass and performance values validated by V3.2 code (Delta-V 14.57 km/s).
+- Mass and performance values validated by V3.2BR code (Delta-V 14.57 km/s).
+- Launch from Alcântara provides 463 m/s equatorial bonus.
+- NTR activation only above 400 km per CNEN/AEB and 10 CFR 52.
 - Mission timelines assume favorable launch windows and trajectory conditions.
 - Subsystems are documented at architectural level rather than as final certified designs.
-- Risk values are reference estimates, not operational guarantees.
-- The repository is intended to evolve through simulation, validation, and refinement.
 
 ## 7. Methodology
 
@@ -132,8 +135,8 @@ All results should be reproducible and traceable to assumptions, models, or simu
 
 The project will be considered technically mature when it satisfies the following criteria:
 
-- Closed mass balance with explicit margins (V3.2: +370 m/s).
-- Mission profile consistent with the delta-v budget (14.2 km/s required, 14.57 km/s available).
+- Closed mass balance with explicit margins (V3.2BR: +833 m/s).
+- Mission profile consistent with the delta-v budget (13.74 km/s required with Alcântara, 14.57 km/s available).
 - Functional redundancy in propulsion, ECLSS, and control.
 - Simulation-backed verification of thermal, structural, and radiation behavior.
 - Automated tests for software and model integrity.
@@ -146,7 +149,7 @@ This version still depends on:
 - propulsion performance verification at 920s Isp;
 - radiation shielding analysis;
 - long-duration reliability studies;
-- logistical modeling for Earth and Mars operations.
+- CNEN licensing for nuclear systems launched from Brazil.
 
 For that reason, the values in this document should be interpreted as target architecture, not certified performance.
 
@@ -168,7 +171,7 @@ For that reason, the values in this document should be interpreted as target arc
 - Document results, assumptions, and limitations.
 
 ### Phase 4 — Consolidation
-- Conduct technical review.
+- Conduct technical review with AEB/CNEN.
 - Standardize documentation.
 - Prepare for public demonstration.
 
@@ -203,9 +206,9 @@ For that reason, the values in this document should be interpreted as target arc
 
 ## 13. Executive Summary
 
-ARES-STARSHIP V3.2 is a conceptual interplanetary transport platform built around reusable nuclear-thermal propulsion and long-duration crew survival, capable of round-trip Mars missions without refueling.
+ARES-STARSHIP V3.2BR is a conceptual interplanetary transport platform launched from Alcântara, Brazil, built around reusable nuclear-thermal propulsion and long-duration crew survival, capable of round-trip Mars missions without refueling.
 
-Its strength lies in the combination of mission ambition, systems thinking, and a clear strategic identity. The next step is to convert that vision into reproducible engineering evidence, simulation-backed validation, and disciplined technical documentation.
+Its strength lies in the combination of mission ambition, systems thinking, and equatorial launch advantage. The next step is to convert that vision into reproducible engineering evidence, simulation-backed validation, and disciplined technical documentation.
 
 ## 14. Contributing and Validation
 
