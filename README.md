@@ -1,104 +1,229 @@
-# ARES-STARSHIP V3.1 - Prometheus I Mission
+# ARES-STARSHIP V3.1 — Prometheus I Mission
 
 **Manned Interplanetary Freighter with Nuclear-Thermal Aerospike Propulsion**  
 `CLASSIFICATION: OFFICIAL USE | AUTHOR: RANYELLSON QUINTÃO | DATE: 05/22/2026`
 
-> ARES V3.1 does not take 6 people to Mars. It takes civilization out of the cradle.
+> ARES V3.1 is not designed to carry six people to Mars. It is designed to extend human civilization beyond Earth.
 
 ## Mission Summary: Prometheus I
 
 | Parameter | Value |
 | --- | --- |
-| **Objective** | Transport 6 crew + 71t payload to Mars orbit with Earth return |
-| **Total Duration** | 776 days = 2.13 years |
-| **Vehicle** | ARES-STARSHIP V3.1 - Reusable NTR Interplanetary Freighter |
+| **Objective** | Transport 6 crew + 71 t payload to Mars orbit with Earth return |
+| **Total Duration** | 776 days |
+| **Vehicle** | ARES-STARSHIP V3.1 — Reusable NTR Interplanetary Freighter |
 | **Launch Window** | 2034 |
 
-## 1. The Rocket - ARES-STARSHIP V3.1
+## 1. Vehicle Overview
+
+ARES-STARSHIP V3.1 is a conceptual reusable interplanetary transport vehicle designed for crewed Mars missions with return capability. The architecture combines nuclear-thermal propulsion, aerospike nozzle efficiency, and a long-duration habitation module optimized for deep-space operations.
 
 ### 1.1 General Specifications
 | Parameter | Value | Note |
 | --- | --- | --- |
 | Total Height | 84.6 m | Optimized 4x NTR profile |
 | Diameter | 9 m | Starship compatible |
-| Dry Mass | 199.4 t | Inc. 4x NTR cluster + ATHENA |
-| Fueled Mass LEO | 1,452.7 t | 1,127.0t H2 + 199.4t dry + 126.3t tanks/reserve |
-| Payload to TMI | 71 t | Post-TMI injection to Mars |
-| Payload to Mars Surface | 45 t | After MOI + EDL losses |
-| Crew | 6 people | Long-duration mission |
+| Dry Mass | 199.4 t | Includes 4x NTR cluster + ATHENA |
+| Fueled Mass in LEO | 1,452.7 t | 1,127.0 t LH2 + 199.4 t dry + 126.3 t tanks/reserve |
+| Payload to TMI | 71 t | Post-TMI injection toward Mars |
+| Payload to Mars Surface | 45 t | After MOI and EDL losses |
+| Crew | 6 | Long-duration mission |
 
-### 1.2 NTR Aerospike Propulsion System
-1. **Reactors**: 4x NTR Units @ 185 kN each. Total: 740 kN in vacuum.
-2. **Core**: Low-enriched uranium in UC-ZrC matrix. Operating temp: 2800K.
-3. **Propellant**: Liquid Hydrogen at 20K. Tanks: 1,127t LH2.
-4. **Isp vacuum**: 780s. 2.05x efficiency vs LOX/CH4 chemical engines.
-5. **Aerospike Nozzle**: Truncated linear, Carbon-Carbon coated with NbC.
-6. **Advantages**: Automatic altitude compensation, thrust vectoring via differential throttle, T/W 0.52.
-7. **Service Life**: 15 hours certified burn. Sufficient for 3x Earth-Mars-Earth trips.
-8. **Redundancy**: Loss of 1 engine = T/W 0.39, abort to LEO still possible.
+### 1.2 Propulsion System
+1. **Configuration**: 4x NTR units producing 185 kN each, for a total of 740 kN in vacuum.
+2. **Core**: Low-enriched uranium in a UC-ZrC matrix, operating at 2800 K.
+3. **Propellant**: Liquid hydrogen stored at 20 K.
+4. **Vacuum Isp**: 780 s.
+5. **Nozzle**: Truncated linear aerospike with carbon-carbon structure and NbC coating.
+6. **Advantages**: Altitude compensation, differential thrust vectoring, and improved high-vacuum performance.
+7. **Service Life**: 15 hours certified burn time.
+8. **Redundancy**: Loss of one engine preserves abort capability to LEO.
 
-### 1.3 "ATHENA" Crew Module
-1. **Habitable Volume**: 380 m³. 63 m³ per crew member.
-2. **ECLSS**: Closed loop, 90% water/O2 recycling. 900-day autonomy.
-3. **Shielding**: 20cm polyethylene + water tanks. Total dose: <150 mSv.
-4. **Artificial Gravity**: Cable system. 2.5 RPM rotation = 0.38g during cruise.
-5. **Onboard AI**: ODIN system controls navigation, reactor, life support.
-6. **Health**: Gym, medical lab, 15% food from hydroponics.
+### 1.3 ATHENA Crew Module
+1. **Habitable Volume**: 380 m³ total.
+2. **ECLSS**: Closed-loop system with 90% water and oxygen recycling.
+3. **Radiation Shielding**: 20 cm polyethylene plus water shielding.
+4. **Artificial Gravity**: Cable rotation system at 2.5 RPM for 0.38 g during cruise.
+5. **Onboard AI**: ODIN manages navigation, reactor coordination, and life support supervision.
+6. **Crew Support**: Gym, medical lab, and partial hydroponic food production.
 
-## 2. The Crew - 6 Members
+## 2. Crew Architecture
 
-**Philosophy**: Minimum crew, overlapping skills, psychological redundancy.
+**Design philosophy**: Minimum crew, overlapping skill sets, and psychological redundancy.
 
-| Position | Primary | Secondary | Criterion |
+| Position | Primary | Secondary | Selection Criterion |
 | --- | --- | --- | --- |
-| Commander | Pilot/Astronaut | Nuclear Engineer | 15+ years flight, extreme leadership |
-| Pilot/Flight Eng | Spacecraft Ops | Systems Engineer | ISS experience + NTR test |
-| Chief Reactor Eng | Nuclear Physics | Mechanical Eng | Naval reactor operator qual |
-| Flight Surgeon | Emergency Medicine | Biology/Botany | Surgery + ECLSS + Psychology |
-| Chief Scientist | Planetary Geology | Exobiology | Extreme field research |
-| Mission Eng | Robotics/EVA | Geotech/Construction | Operate machinery, build habitat |
+| Commander | Pilot / Astronaut | Nuclear Engineer | 15+ years flight experience and leadership |
+| Pilot / Flight Engineer | Spacecraft Operations | Systems Engineering | ISS experience + NTR test exposure |
+| Chief Reactor Engineer | Nuclear Physics | Mechanical Engineering | Naval reactor operator qualification |
+| Flight Surgeon | Emergency Medicine | Biology / Botany | Surgery + ECLSS + psychology |
+| Chief Scientist | Planetary Geology | Exobiology | Extreme field research experience |
+| Mission Engineer | Robotics / EVA | Geotech / Construction | Habitat deployment and heavy equipment ops |
 
-**Training**: 24 months isolated. Group compatibility > individual performance.
+**Training Standard**: 24 months of isolated team preparation. Group compatibility is treated as a mission-critical variable.
 
-## 3. Voyage Chronology - 776 Days
+## 3. Mission Profile
 
-**Phase 1: LEO Assembly | T+0 to T+30**  
-4x Starship launches place ARES + crew in 400km orbit. 12x tanker flights load 1,127t LH2.
+### Phase 1 — LEO Assembly | T+0 to T+30
+Four launches assemble the ARES vehicle and crew in 400 km orbit. Twelve tanker flights deliver the liquid hydrogen required for trans-Mars injection.
 
-**Phase 2: TMI | T+31**  
-28m 14s burn. 740 kN pushes 1,452.7t to 11.2 km/s. "TMI Complete. Prometheus is on her way."
+### Phase 2 — Trans-Mars Injection | T+31
+A 28 minute 14 second burn places the vehicle on its interplanetary trajectory. The propulsion system delivers the required delta-v with operational margin.
 
-**Phase 3: Cruise | T+32 to T+150**  
-119 days. Ship spins at 2.5 RPM on 100m cable for 0.38g. Solar storm shelter protocol.
+### Phase 3 — Cruise | T+32 to T+150
+The vehicle enters a 119 day cruise phase. Artificial gravity is maintained through rotation, and storm shelter procedures remain active throughout transit.
 
-**Phase 4: MOI | T+151**  
-22min capture burn. Delta-V = 2.1 km/s. 2 of 4 NTRs sufficient for abort.
+### Phase 4 — Mars Orbit Insertion | T+151
+A 22 minute capture burn inserts the vehicle into Mars orbit. Redundant engine configuration preserves abort flexibility and mission continuity.
 
-**Phase 5: Mars Ops | T+152 to T+650**  
-498 days surface. Land 45t. Build base, 100kW fission reactor, ISRU plant. Produce 200t LCH4/LOX + 50t water for return.
+### Phase 5 — Mars Operations | T+152 to T+650
+The crew supports a 498 day mission phase focused on surface operations, base construction, ISRU deployment, and resource production for return logistics.
 
-**Phase 6: TEI & Return | T+651 to T+776**  
-28min departure burn. 125-day cruise. 22min EOI burn + aerocapture at Earth.
+### Phase 6 — TEI and Return | T+651 to T+776
+The return sequence begins with departure burn, followed by cruise, Earth arrival, and aerocapture-assisted recovery.
 
-## 4. Threats & Mitigations
+## 4. Risk Management
 
-| Threat | Probability | Mitigation | Success Rate |
+| Threat | Probability | Mitigation | Expected Outcome |
 | --- | --- | --- | --- |
-| Cosmic Radiation | 100% | Shielding + 125 day transit | 99.7% < NASA limit |
-| Reactor Failure | 1.2% | 4x reactors. 2 = abort, 3 = mission continue | 99.99% mission safe |
-| ECLSS Loss | 0.8% | 3x redundant + 90d reserve | 99.9% survival |
-| MMOD Impact | 4%/year | Whipple shield + evasion | 99.5% no critical breach |
-| Psychological | 30% | Artificial gravity + AI + 6 crew | 95% no mental abort |
+| Cosmic Radiation | High | Shielding + optimized transit duration | Dose maintained within mission limits |
+| Reactor Failure | Low | 4x propulsion redundancy | Abort or continuation capability preserved |
+| ECLSS Failure | Low | Redundant life support and reserve capacity | Crew survival protection maintained |
+| MMOD Impact | Medium | Whipple shielding + operational avoidance | Reduced critical breach probability |
+| Psychological Stress | Medium | Artificial gravity, AI support, team selection | Improved long-duration crew resilience |
 
-**Risk Conclusion**: Loss of Crew 1 in 38 missions. Apollo was 1 in 7.  
-First time Mars has lower risk profile than climbing Everest in 1950.
+**Risk posture**: The mission is designed around redundancy, operational margin, and system-level resilience.
 
-## 5. The Legacy
+## 5. Strategic Value
 
-1. **Economic**: Opens $1.4T market in asteroid mining + energy. Cost/kg drops 12x vs chemical.
-2. **Scientific**: 45t lab on Mars. Answers "are we alone?" in 10 years, not 100.
-3. **Survival**: Spreads the species. Asteroid/war no longer ends humanity.
-4. **Inspiration**: Every child born after 2034 grows up knowing they can leave Earth.
-5. **Geopolitical**: Ensures cislunar dominance. 450,000 direct jobs in space reactor industry.
+1. **Economic Value**: Enables a long-term industrial pathway for deep-space transport and high-value off-world logistics.
+2. **Scientific Value**: Supports high-capacity planetary science, biology, and habitat development on Mars.
+3. **Civilizational Value**: Expands humanity beyond a single planetary surface.
+4. **Industrial Value**: Creates a framework for reusable interplanetary transport and supporting infrastructure.
+5. **Geopolitical Value**: Establishes a technological foundation for cislunar and Martian operations.
 
-## Repository Structure
+## 6. Premises and Scope
+
+This repository presents a conceptual systems-engineering study. The mission architecture, performance numbers, and operational assumptions are early-stage estimates intended for analysis, iteration, and future validation.
+
+### Main Premises
+- Mass and performance values are conceptual estimates.
+- Mission timelines assume favorable launch windows and trajectory conditions.
+- Subsystems are documented at architectural level rather than as final certified designs.
+- Risk values are reference estimates, not operational guarantees.
+- The repository is intended to evolve through simulation, validation, and refinement.
+
+## 7. Methodology
+
+The project is structured in three levels:
+
+1. **Conceptual Architecture**  
+   Define mission goals, system boundaries, and major constraints.
+
+2. **Engineering Verification**  
+   Validate mass, energy, trajectory, shielding, and redundancy assumptions.
+
+3. **Simulation and Test Readiness**  
+   Build computational models, run failure analysis, and prepare subsystem validation.
+
+All results should be reproducible and traceable to assumptions, models, or simulations.
+
+## 8. Validation Criteria
+
+The project will be considered technically mature when it satisfies the following criteria:
+
+- Closed mass balance with explicit margins.
+- Mission profile consistent with the delta-v budget.
+- Functional redundancy in propulsion, ECLSS, and control.
+- Simulation-backed verification of thermal, structural, and radiation behavior.
+- Automated tests for software and model integrity.
+- Clear traceability between assumptions, calculations, and outputs.
+
+## 9. Risks and Limitations
+
+This version still depends on:
+- high-temperature material validation;
+- propulsion performance verification;
+- radiation shielding analysis;
+- long-duration reliability studies;
+- logistical modeling for Earth and Mars operations.
+
+For that reason, the values in this document should be interpreted as target architecture, not certified performance.
+
+## 10. Roadmap
+
+### Phase 1 — Concept
+- Define mission scope and constraints.
+- Close mass and energy balance.
+- Establish repository architecture and modeling standards.
+
+### Phase 2 — Simulation
+- Simulate trajectory and mission windows.
+- Model ECLSS, radiation, and thermal behavior.
+- Evaluate redundancy and failure scenarios.
+
+### Phase 3 — Prototype
+- Implement subsystem models.
+- Add automated tests.
+- Document results, assumptions, and limitations.
+
+### Phase 4 — Consolidation
+- Conduct technical review.
+- Standardize documentation.
+- Prepare for public demonstration.
+
+## 11. Repository Structure
+/
+├── README.md
+├── docs/
+│   ├── mission_concept.md
+│   ├── assumptions.md
+│   ├── calculations.md
+│   ├── risks.md
+│   └── roadmap.md
+├── models/
+│   ├── propulsion/
+│   ├── mission_profile/
+│   ├── radiation/
+│   ├── eclss/
+│   └── mass_budget/
+├── simulations/
+├── analysis/
+├── tests/
+└── assets/
+
+## 12. Design Principles
+
+- Vision communicates purpose.
+- Engineering communicates credibility.
+- Assumptions must be explicit.
+- Every number must be traceable.
+- Every subsystem must be testable.
+- Every claim must have a validation path.
+
+## 13. Executive Summary
+
+ARES-STARSHIP V3.1 is a conceptual interplanetary transport platform built around reusable nuclear-thermal propulsion and long-duration crew survival.
+
+Its main strength is the combination of mission ambition, systems thinking, and clear strategic identity. Its next step is to convert that vision into reproducible engineering evidence, simulation-backed validation, and disciplined technical documentation.
+
+## 14. Contributing and Validation
+
+Contributions are welcome in the following areas:
+- mission analysis;
+- propulsion modeling;
+- thermal and structural simulation;
+- radiation shielding;
+- ECLSS modeling;
+- software architecture;
+- verification and test coverage.
+
+Every contribution should clearly state:
+- which assumption it changes;
+- which calculation or model it affects;
+- which evidence supports the change;
+- how the result can be reproduced.
+
+---
+
+*This repository presents a conceptual systems-engineering study. Numbers, assumptions, and mission outcomes are subject to refinement as the project evolves.*
