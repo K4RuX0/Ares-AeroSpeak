@@ -1,5 +1,5 @@
 # =========================================================================
-# ARES-STARSHIP V3.1 - EQUILIBRIUM CONFIGURATION (4x NTR OPTIMIZED CLUSTER)
+# ARES-STARSHIP V3.1 - FULL VEHICLE EXECUTION READY (4x NTR OPTIMIZED CLUSTER)
 # STATUS: ISP 780S | OPTIMIZED 9M PROFILE | STANDARD INTEGRATION | 10CFR52
 # CONTACT: ranyellson@gmail.com | +55 31 98837-8286
 # =========================================================================
@@ -8,7 +8,7 @@ import math, csv
 class AresStarshipNTR:
     def __init__(self):
         # === PROPULSION ENGINE CLUSTER - 4x NTR UNITS (OPTIMIZED) ===
-        self.CORE_GAS_TEMP = 2800       # K, matching README
+        self.CORE_GAS_TEMP = 2800       # K
         self.MAX_WALL_TEMP = 1200       # K, Inconel-718
         self.CHAMBER_PRESSURE = 7.0e6   # Pa
         self.ALLOWABLE_STRESS = 150e6   # Pa
@@ -19,11 +19,11 @@ class AresStarshipNTR:
         self.INTERNAL_RADIUS = 0.60     # m
         
         # === COMPLETE VEHICLE - PROMETHEUS I MISSION ===
-        self.MISSION_DAYS = 776         # 776 days total matching README
-        self.CREW_COUNT = 6             # 6 crew members matching README
+        self.MISSION_DAYS = 776         # 776 days total
+        self.CREW_COUNT = 6             # 6 crew members
         self.DELTA_V_TOTAL = 14200      # m/s, Earth-Mars-Earth
-        self.HABITAT_VOL = 380          # m³, 63m³/crew matching README
-        self.SHIELDING_AREAL_DENSITY = 20 # g/cm², PE + H2O matching README
+        self.HABITAT_VOL = 380          # m³, 63m³/crew
+        self.SHIELDING_AREAL_DENSITY = 20 # g/cm², PE + H2O
         self.POWER_REQ_KWE = 100        # kWe, Brayton
         
         self.PROJECT_NAME = "ARES-STARSHIP V3.1 - Prometheus I Optimized"
@@ -32,7 +32,6 @@ class AresStarshipNTR:
         stress_ratio = (self.ALLOWABLE_STRESS + self.CHAMBER_PRESSURE) / (self.ALLOWABLE_STRESS - self.CHAMBER_PRESSURE)
         self.external_radius = self.INTERNAL_RADIUS * math.sqrt(stress_ratio)
         self.wall_thickness = self.external_radius - self.INTERNAL_RADIUS
-        # Spike mass calculated for 4 integrated units (Density = 8190 kg/m³)
         self.spike_mass_single = math.pi * (self.external_radius**2 - self.INTERNAL_RADIUS**2) * 4.5 * 8190
         self.spike_mass = self.spike_mass_single * self.NTR_COUNT
         self.exhaust_velocity = self.REALISTIC_ISP * 9.81
@@ -40,36 +39,29 @@ class AresStarshipNTR:
         return self.wall_thickness, self.spike_mass, self.h2_mass_flow
 
     def calculate_starship_mass(self):
-        # 1. Propulsion Block - 4x NTR Setup
         reactor_mass = 5000 * self.NTR_COUNT  # 5t per reactor core
-        motor_dry = self.spike_mass + reactor_mass + 8000  # spikes + reactors + optimized manifolds + pumps
-        
-        # 2. Structural Sizing via Rocket Equation
+        motor_dry = self.spike_mass + reactor_mass + 8000  
         mass_ratio = math.exp(self.DELTA_V_TOTAL / self.exhaust_velocity)
         
-        # 3. Habitat & Life Support - ATHENA Module
-        habitat_struct = 10000  # kg, ATHENA structure
-        life_support = self.CREW_COUNT * 1.25 * self.MISSION_DAYS  # 1.25kg/crew/day
+        habitat_struct = 10000  # kg
+        life_support = self.CREW_COUNT * 1.25 * self.MISSION_DAYS  
         crew = self.CREW_COUNT * 80
         
-        # 4. Shielding + Power + Avionics Array
-        shield_mass = self.SHIELDING_AREAL_DENSITY * 10 * 40000 / 1000  # 40m² area protection
-        power_sys = 4500  # 45kg/kWe
-        avionics = 3800
-        thermal = 2000
+        shield_mass = self.SHIELDING_AREAL_DENSITY * 10 * 40000 / 1000  
+        power_sys = 4500  
+        avionics, thermal = 3800, 2000
         
         self.dry_mass = motor_dry + habitat_struct + life_support + crew + shield_mass + power_sys + avionics + thermal
         propellant_mass = (self.dry_mass * mass_ratio) - self.dry_mass
-        self.total_propellant = propellant_mass * 1.15  # +15% cryogenic buffer
+        self.total_propellant = propellant_mass * 1.15  
         tanks_mass = self.total_propellant * 0.10
         
         self.launchpad_total_mass = self.dry_mass + self.total_propellant + tanks_mass
         self.tw_ratio = self.TARGET_THRUST_N / (self.launchpad_total_mass * 9.81)
         
-        # 5. Geometrical Dimensions (Sychronized back to standard 9m diameter)
         self.h2_volume = self.total_propellant / 70.85
-        self.tank_length = self.h2_volume / (math.pi * 4.5**2)  # 9m diameter = 4.5m radius
-        self.total_vehicle_height = 4.5 + self.tank_length + 12.0  # spike + tank + habitat
+        self.tank_length = self.h2_volume / (math.pi * 4.5**2)  
+        self.total_vehicle_height = 4.5 + self.tank_length + 12.0  
         
         return self.launchpad_total_mass, self.tw_ratio, self.total_vehicle_height
 
@@ -77,7 +69,6 @@ class AresStarshipNTR:
         t, m_s, f = self.calculate_aerospike_motor()
         m_pad, tw, h = self.calculate_starship_mass()
         
-        # 1. STRUCTURAL BILL OF MATERIALS (BOM OPTIMIZED)
         bom_items = [
             ["System", "Item", "Spec", "Mass_kg", "USD", "TRL"],
             ["Propulsion", "Aerospike Chamber Inconel-718", f"{t*1000:.1f}mm wall x4", 8000, 4000000, 5],
@@ -93,15 +84,14 @@ class AresStarshipNTR:
             ["Thermal", "Radiators Extended Array", "2000m²", 2000, 4000000, 7]
         ]
         
-        # Financial sum tracking column 4 (USD) to dynamic pricing
         total_cost = sum([row[4] for row in bom_items[1:]])
         bom_data = bom_items + [["TOTAL", "", "", int(self.dry_mass), total_cost, ""]]
         
-        with open("01_BOM_STARSHIP_V3.1.csv", "w", newline='') as file_bom: 
-            csv.writer(file_bom).writerows(bom_data)
-        
-        # 2. LOGISTICAL MASS BREAKDOWN REPORT
-        mass = f"""ARES-STARSHIP V3.1 - MASS BREAKDOWN - Prometheus I Optimized Mission
+        try:
+            with open("01_BOM_STARSHIP_V3.1.csv", "w", newline='') as file_bom: 
+                csv.writer(file_bom).writerows(bom_data)
+            
+            mass = f"""ARES-STARSHIP V3.1 - MASS BREAKDOWN - Prometheus I Optimized Mission
 
 LAUNCHPAD TOTAL: {m_pad/1000:.1f} t
 Dry Mass: {self.dry_mass/1000:.1f} t
@@ -119,11 +109,10 @@ Key Ratios:
 - Shielding Matrix: {self.SHIELDING_AREAL_DENSITY} g/cm² PE+H2O
 - Transit Window: 125 days to Mars (Optimized Flow Profile)
 """
-        with open("02_MASS_BREAKDOWN_V3.1.txt", "w") as file_mass: 
-            file_mass.write(mass)
-        
-        # 3. EXECUTIVE ONE PAGER INVESTOR
-        pitch = f"""ARES-STARSHIP V3.1 - INVESTOR ONE PAGER - Prometheus I Balanced
+            with open("02_MASS_BREAKDOWN_V3.1.txt", "w") as file_mass: 
+                file_mass.write(mass)
+            
+            pitch = f"""ARES-STARSHIP V3.1 - INVESTOR ONE PAGER - Prometheus I Balanced
 
 Problem: Chemical Mars = 9 months, $200M+ per crew, high radiation risks.
 Solution: 680kN (4x 170kN NTR Cluster) Nuclear Aerospike Freighter, 125-day transit.
@@ -145,16 +134,18 @@ Milestone: 300s hot-fire validation with NASA/DOE labs
 
 Contact: Ranyellson Quintão
 ranyellson@gmail.com | +55 31 98837-8286"""
-        with open("03_INVESTOR_PITCH_V3.1.txt", "w") as file_pitch: 
-            file_pitch.write(pitch)
-        
-        print("========================================================================")
-        print("ARES-STARSHIP V3.1 - PROMETHEUS I OPTIMIZED FILES GENERATED")
-        print("========================================================================")
-        print(f"1. 01_BOM_STARSHIP_V3.1.csv - Complete Fleet Cost: ${total_cost/1e6:.1f}M")
-        print(f"2. 02_MASS_BREAKDOWN_V3.1.txt - Pad Mass: {m_pad/1000:.1f}t | T/W: {tw:.2f}")
-        print(f"3. 03_INVESTOR_PITCH_V3.1.txt - {self.TARGET_THRUST_N/1000:.0f}kN | {self.CREW_COUNT} Crew | {self.MISSION_DAYS} Days")
-        print("========================================================================")
+            with open("03_INVESTOR_PITCH_V3.1.txt", "w") as file_pitch: 
+                file_pitch.write(pitch)
+            
+            print("========================================================================")
+            print("ARES-STARSHIP V3.1 - PROMETHEUS I OPTIMIZED FILES GENERATED")
+            print("========================================================================")
+            print(f"1. 01_BOM_STARSHIP_V3.1.csv - Complete Fleet Cost: ${total_cost/1e6:.1f}M")
+            print(f"2. 02_MASS_BREAKDOWN_V3.1.txt - Pad Mass: {m_pad/1000:.1f}t | T/W: {tw:.2f}")
+            print(f"3. 03_INVESTOR_PITCH_V3.1.txt - {self.TARGET_THRUST_N/1000:.0f}kN | {self.CREW_COUNT} Crew | {self.MISSION_DAYS} Days")
+            print("========================================================================")
+        except IOError as e:
+            print(f"File writing error: {e}")
 
 if __name__ == "__main__":
     AresStarshipNTR().generate_all_files()
