@@ -1,85 +1,16 @@
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
 venv/
-env/
-ENV/
-
-# Jupyter
-.ipynb_checkpoints
-
-# VSCode / IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Ambiente e chaves
 .env
-.env.local
-*.pem
-*.key
-
-# Sistema operacional
-.DS_Store
-Thumbs.db
-Desktop.ini
 
 # Projeto ARES-STARSHIP V3.1
-# CAD e malhas pesadas
-*.step
-*.stp
-*.stl
-*.obj
-*.blend
-*.dwg
-
-# Simulações CFD/FEA/NTR
 simulations/
 results/
-output/
-data/
-logs/
-*.vtk
-*.vtu
-*.cas
-*.dat
-
-# Dados de trajetória e telemetria
+*.step
+*.stl
 *.csv
 *.h5
-*.hdf5
-*.npy
-*.npz
-
-# Renders e vídeo
 renders/
 *.mp4
-*.avi
-*.mov
-*.exr
-
-# Temporários
 *.log
-*.tmp
-temp/
-tmp/
