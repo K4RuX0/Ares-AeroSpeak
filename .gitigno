@@ -1,0 +1,4 @@
+cd Ares_Aerospike_V3.1
+git mv .gitigno .gitignore
+git commit -m "fix: rename .gitigno to .gitignore"
+git push
