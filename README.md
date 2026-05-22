@@ -1,40 +1,40 @@
-# ARES-STARSHIP V3.1 — Prometheus I Mission
+# ARES-STARSHIP V3.2 — Prometheus I Mission
 
 **Manned Interplanetary Freighter with Nuclear-Thermal Aerospike Propulsion**  
 `CLASSIFICATION: OFFICIAL USE | AUTHOR: RANYELLSON QUINTÃO | DATE: 05/22/2026`
 
-> ARES V3.1 is not designed to carry six people to Mars. It is designed to extend human civilization beyond Earth.
+> ARES V3.2 is not designed to carry six people to Mars. It is designed to extend human civilization beyond Earth — with a round trip on a single tank.
 
 ## Mission Summary: Prometheus I
 
 | Parameter | Value |
 | --- | --- |
-| **Objective** | Transport 6 crew + 71 t payload to Mars orbit with Earth return |
+| **Objective** | Transport 6 crew + 71 t payload to Mars orbit with Earth return, no refuel |
 | **Total Duration** | 776 days |
-| **Vehicle** | ARES-STARSHIP V3.1 — Reusable NTR Interplanetary Freighter |
+| **Vehicle** | ARES-STARSHIP V3.2 — Reusable NTR Interplanetary Freighter |
 | **Launch Window** | 2034 |
 
 ## 1. Vehicle Overview
 
-ARES-STARSHIP V3.1 is a conceptual reusable interplanetary transport vehicle designed for crewed Mars missions with return capability. The architecture combines nuclear-thermal propulsion, aerospike nozzle efficiency, and a long-duration habitation module optimized for deep-space operations.
+ARES-STARSHIP V3.2 is a conceptual reusable interplanetary transport vehicle designed for crewed Mars missions with return capability. The architecture combines nuclear-thermal propulsion, aerospike nozzle efficiency, and a long-duration habitation module optimized for deep-space operations.
 
 ### 1.1 General Specifications
 | Parameter | Value | Note |
 | --- | --- | --- |
-| Total Height | 84.6 m | Optimized 4x NTR profile |
+| Total Height | 84.0 m | 4x tank cluster profile |
 | Diameter | 9 m | Starship compatible |
-| Dry Mass | 199.4 t | Includes 4x NTR cluster + ATHENA |
-| Fueled Mass in LEO | 1,452.7 t | 1,127.0 t LH2 + 199.4 t dry + 126.3 t tanks/reserve |
+| Dry Mass | 185.0 t | Includes 4x NTR cluster + ATHENA |
+| Fueled Mass in LEO | 1,407.0 t | 1,127.0 t LH2 + 185.0 t dry + 95.0 t tanks |
 | Payload to TMI | 71 t | Post-TMI injection toward Mars |
 | Payload to Mars Surface | 45 t | After MOI and EDL losses |
 | Crew | 6 | Long-duration mission |
 
 ### 1.2 Propulsion System
 1. **Configuration**: 4x NTR units producing 185 kN each, for a total of 740 kN in vacuum.
-2. **Core**: Low-enriched uranium in a UC-ZrC matrix, operating at 2800 K.
+2. **Core**: Low-enriched uranium in a UC-ZrC-NbC matrix, operating at 3100 K.
 3. **Propellant**: Liquid hydrogen stored at 20 K.
-4. **Vacuum Isp**: 780 s.
-5. **Nozzle**: Truncated linear aerospike with carbon-carbon structure and NbC coating.
+4. **Vacuum Isp**: 920 s.
+5. **Nozzle**: Truncated linear aerospike with carbon-carbon structure and NbC coating, 1350K wall.
 6. **Advantages**: Altitude compensation, differential thrust vectoring, and improved high-vacuum performance.
 7. **Service Life**: 15 hours certified burn time.
 8. **Redundancy**: Loss of one engine preserves abort capability to LEO.
@@ -42,7 +42,7 @@ ARES-STARSHIP V3.1 is a conceptual reusable interplanetary transport vehicle des
 ### 1.3 ATHENA Crew Module
 1. **Habitable Volume**: 380 m³ total.
 2. **ECLSS**: Closed-loop system with 90% water and oxygen recycling.
-3. **Radiation Shielding**: 20 cm polyethylene plus water shielding.
+3. **Radiation Shielding**: 20 cm polyethylene plus water shielding (20 g/cm²).
 4. **Artificial Gravity**: Cable rotation system at 2.5 RPM for 0.38 g during cruise.
 5. **Onboard AI**: ODIN manages navigation, reactor coordination, and life support supervision.
 6. **Crew Support**: Gym, medical lab, and partial hydroponic food production.
@@ -68,7 +68,7 @@ ARES-STARSHIP V3.1 is a conceptual reusable interplanetary transport vehicle des
 Four launches assemble the ARES vehicle and crew in 400 km orbit. Twelve tanker flights deliver the liquid hydrogen required for trans-Mars injection.
 
 ### Phase 2 — Trans-Mars Injection | T+31
-A 28 minute 14 second burn places the vehicle on its interplanetary trajectory. The propulsion system delivers the required delta-v with operational margin.
+A 28 minute burn places the vehicle on its interplanetary trajectory. The propulsion system delivers 14.57 km/s total delta-v with 370 m/s margin.
 
 ### Phase 3 — Cruise | T+32 to T+150
 The vehicle enters a 119 day cruise phase. Artificial gravity is maintained through rotation, and storm shelter procedures remain active throughout transit.
@@ -77,16 +77,16 @@ The vehicle enters a 119 day cruise phase. Artificial gravity is maintained thro
 A 22 minute capture burn inserts the vehicle into Mars orbit. Redundant engine configuration preserves abort flexibility and mission continuity.
 
 ### Phase 5 — Mars Operations | T+152 to T+650
-The crew supports a 498 day mission phase focused on surface operations, base construction, ISRU deployment, and resource production for return logistics.
+The crew supports a 498 day mission phase focused on surface operations, base construction, ISRU deployment, and resource production.
 
 ### Phase 6 — TEI and Return | T+651 to T+776
-The return sequence begins with departure burn, followed by cruise, Earth arrival, and aerocapture-assisted recovery.
+The return sequence begins with departure burn, followed by cruise, Earth arrival, and aerocapture-assisted recovery — all on initial propellant load.
 
 ## 4. Risk Management
 
 | Threat | Probability | Mitigation | Expected Outcome |
 | --- | --- | --- | --- |
-| Cosmic Radiation | High | Shielding + optimized transit duration | Dose maintained within mission limits |
+| Cosmic Radiation | High | Shielding + 920s Isp reduces transit time | Dose maintained within mission limits |
 | Reactor Failure | Low | 4x propulsion redundancy | Abort or continuation capability preserved |
 | ECLSS Failure | Low | Redundant life support and reserve capacity | Crew survival protection maintained |
 | MMOD Impact | Medium | Whipple shielding + operational avoidance | Reduced critical breach probability |
@@ -107,7 +107,7 @@ The return sequence begins with departure burn, followed by cruise, Earth arriva
 This repository presents a conceptual systems-engineering study. The mission architecture, performance numbers, and operational assumptions are early-stage estimates intended for analysis, iteration, and future validation.
 
 ### Main Premises
-- Mass and performance values are conceptual estimates.
+- Mass and performance values validated by V3.2 code (Delta-V 14.57 km/s).
 - Mission timelines assume favorable launch windows and trajectory conditions.
 - Subsystems are documented at architectural level rather than as final certified designs.
 - Risk values are reference estimates, not operational guarantees.
@@ -132,8 +132,8 @@ All results should be reproducible and traceable to assumptions, models, or simu
 
 The project will be considered technically mature when it satisfies the following criteria:
 
-- Closed mass balance with explicit margins.
-- Mission profile consistent with the delta-v budget.
+- Closed mass balance with explicit margins (V3.2: +370 m/s).
+- Mission profile consistent with the delta-v budget (14.2 km/s required, 14.57 km/s available).
 - Functional redundancy in propulsion, ECLSS, and control.
 - Simulation-backed verification of thermal, structural, and radiation behavior.
 - Automated tests for software and model integrity.
@@ -142,8 +142,8 @@ The project will be considered technically mature when it satisfies the followin
 ## 9. Risks and Limitations
 
 This version still depends on:
-- high-temperature material validation;
-- propulsion performance verification;
+- high-temperature material validation at 3100K;
+- propulsion performance verification at 920s Isp;
 - radiation shielding analysis;
 - long-duration reliability studies;
 - logistical modeling for Earth and Mars operations.
@@ -203,7 +203,7 @@ For that reason, the values in this document should be interpreted as target arc
 
 ## 13. Executive Summary
 
-ARES-STARSHIP V3.1 is a conceptual interplanetary transport platform built around reusable nuclear-thermal propulsion and long-duration crew survival.
+ARES-STARSHIP V3.2 is a conceptual interplanetary transport platform built around reusable nuclear-thermal propulsion and long-duration crew survival, capable of round-trip Mars missions without refueling.
 
 Its strength lies in the combination of mission ambition, systems thinking, and a clear strategic identity. The next step is to convert that vision into reproducible engineering evidence, simulation-backed validation, and disciplined technical documentation.
 
@@ -226,4 +226,5 @@ Every contribution should clearly state:
 
 ---
 
+*Contact: ranyellson@gmail.com*  
 *This repository presents a conceptual systems-engineering study. Numbers, assumptions, and mission outcomes are subject to refinement as the project evolves.*
