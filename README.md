@@ -1,6 +1,6 @@
 # ARES-STARSHIP V3.1 - Prometheus I Mission
 
-**Manned Interplanetary Freighter with Nuclear-Thermal Aerospike Propulsion**  
+**Manned Interplanetary Freighter with Nuclear-Thermal Aerospike Propulsion**
 `CLASSIFICATION: OFFICIAL USE | AUTHOR: RANYELLSON QUINTÃO | DATE: 05/22/2026`
 
 > ARES V3.1 does not take 6 people to Mars. It takes civilization out of the cradle.
@@ -60,22 +60,22 @@
 
 ## 3. Voyage Chronology - 776 Days
 
-**Phase 1: LEO Assembly | T+0 to T+30**  
+**Phase 1: LEO Assembly | T+0 to T+30**
 3x Starship launches place ARES + crew in 400km orbit. 8x tanker flights load 820t LH2.
 
-**Phase 2: TMI | T+31**  
+**Phase 2: TMI | T+31**
 45m 12s burn. 510 kN pushes 905t to 11.2 km/s. "TMI Complete. Prometheus is on her way."
 
-**Phase 3: Cruise | T+32 to T+150**  
+**Phase 3: Cruise | T+32 to T+150**
 119 days. Ship spins at 2.5 RPM on 100m cable for 0.38g. Solar storm shelter protocol.
 
-**Phase 4: MOI | T+151**  
+**Phase 4: MOI | T+151**
 35min capture burn. Delta-V = 2.1 km/s. 1 of 3 NTRs sufficient for abort.
 
-**Phase 5: Mars Ops | T+152 to T+650**  
+**Phase 5: Mars Ops | T+152 to T+650**
 498 days surface. Land 150t. Build base, 100kW fission reactor, ISRU plant. Produce 200t LCH4/LOX + 50t water for return.
 
-**Phase 6: TEI & Return | T+651 to T+776**  
+**Phase 6: TEI & Return | T+651 to T+776**
 45min departure burn. 125-day cruise. 35min EOI burn + aerocapture at Earth.
 
 ## 4. Threats & Mitigations
@@ -88,7 +88,7 @@
 | MMOD Impact | 4%/year | Whipple shield + evasion | 99.5% no critical breach |
 | Psychological | 30% | Artificial gravity + AI + 6 crew | 95% no mental abort |
 
-**Risk Conclusion**: Loss of Crew 1 in 42 missions. Apollo was 1 in 7.  
+**Risk Conclusion**: Loss of Crew 1 in 42 missions. Apollo was 1 in 7.
 First time Mars has lower risk profile than climbing Everest in 1950.
 
 ## 5. The Legacy
