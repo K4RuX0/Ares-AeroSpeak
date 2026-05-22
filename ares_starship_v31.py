@@ -86,7 +86,7 @@ class AresStarshipNTR:
             ["Thermal", "Radiators Extended Array", "2000m²", 2000, 4000000, 7]
         ]
         
-        # CORE FIX: Extrai explicitamente row[4] para a soma em dinheiro rodar com sucesso
+        # CORE FIX: Extrai explicitamente o índice para a soma rodar sem erros
         total_cost = sum([row[4] for row in bom_items[1:]])
         bom_data = bom_items + [["TOTAL", "", "", int(self.dry_mass), total_cost, ""]]
         
