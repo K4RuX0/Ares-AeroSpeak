@@ -1,18 +1,18 @@
 ARES-STARSHIP V3.1 - INVESTOR ONE PAGER - Prometheus I Balanced
 
 Problem: Chemical Mars = 9 months, $200M+ per crew, high radiation risks.
-Solution: 680kN (4x 170kN NTR Cluster) Nuclear Aerospike Freighter, 125-day transit.
+Solution: 740kN (4x 185kN NTR Cluster) Nuclear Aerospike Freighter, 125-day transit.
 
 Technical Edge:
-- Thrust: 4x 170kN NTR = 680kN | Isp: 780s | T/W: 0.51
-- Pad Mass: 1452.7t | Height: 84.6m | Diameter: 9m (Standard Starship Integration)
+- Thrust: 4x 185kN NTR = 740kN | Isp: 780s | T/W: 0.05
+- Pad Mass: 1452.7t | Height: 266.5m | Diameter: 9m (Standard Starship Integration)
 - Crew Count: 6 | Shielding: 20g/cm² | Power: 100kWe
 - Mission Window: 776 days | Habitat: 380m³ ATHENA Module
 - Heritage: NERVA + 10CFR52 / ITAR Compliant
-- Redundancy: Engine-out abort to LEO with 3x NTR
+- Redundancy: Engine-out abort to LEO with 3x NTR (Engine-out T/W: 0.04)
 
 Business Case:
-- Fleet Asset Valuation: $126.2M Unit Production Cost
+- Fleet Asset Valuation: $ 125.7M Unit Production Cost
 - Saves $3.8B per Mars mission vs traditional chemical fuels
 - Payload TMI: 71t per mission
 - Target Market: NASA deep space assets, DoD Logistics, Space Force
