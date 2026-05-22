@@ -1,7 +1,7 @@
 # ARES-STARSHIP V3.1 — Prometheus I Mission
 
 **Manned Interplanetary Freighter with Nuclear-Thermal Aerospike Propulsion**  
-`CLASSIFICATION: OFFICIAL USE | AUTHOR: RANYELLSON QUINTÃO | DATE: 05/22/2026 | LAUNCH SITE: ALCÂNTARA, BRAZIL`
+`STATUS: CONCEPTUAL DESIGN | AUTHOR: RANYELLSON QUINTÃO | DATE: 05/22/2026 | LAUNCH SITE: ALCÂNTARA, BRAZIL`
 
 > ARES V3.1 is not designed to carry six people to Mars. It is designed to extend human civilization beyond Earth — with a round trip on a single tank, launched from the equator.
 
@@ -112,7 +112,7 @@ This repository presents a conceptual systems-engineering study. The mission arc
 ### Main Premises
 - Mass and performance values validated by V3.1 code (Delta-V 14.57 km/s).
 - Launch from Alcântara provides 463 m/s equatorial bonus.
-- NTR activation only above 400 km per CNEN/AEB and 10 CFR 52.
+- NTR activation only above 400 km per CNEN/AEB and 10 CFR Part 810.
 - Mission timelines assume favorable launch windows and trajectory conditions.
 - Subsystems are documented at architectural level rather than as final certified designs.
 
@@ -136,7 +136,7 @@ All results should be reproducible and traceable to assumptions, models, or simu
 The project will be considered technically mature when it satisfies the following criteria:
 
 - Closed mass balance with explicit margins (V3.1: +833 m/s).
-- Mission profile consistent with the delta-v budget (13.74 km/s required with Alcântara, 14.57 km/s available).
+- Mission profile consistent with the delta-v budget (13.74 km/s required, 14.57 km/s available).
 - Functional redundancy in propulsion, ECLSS, and control.
 - Simulation-backed verification of thermal, structural, and radiation behavior.
 - Automated tests for software and model integrity.
