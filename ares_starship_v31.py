@@ -8,28 +8,28 @@ import math, csv
 class AresStarshipNTR:
     def __init__(self):
         # === MOTOR AEROSPIKE - 4x NTR UNITS ===
-        self.CORE_GAS_TEMP = 2800       # K
-        self.MAX_WALL_TEMP = 1200       # K, Inconel-718
-        self.CHAMBER_PRESSURE = 7.0e6   # Pa
-        self.ALLOWABLE_STRESS = 150e6   # Pa
-        self.REALISTIC_ISP = 780        # s
-        self.THRUST_PER_NTR = 185000    # N, 185kN each for heavy scaling
-        self.NTR_COUNT = 4              
-        self.TARGET_THRUST_N = self.THRUST_PER_NTR * self.NTR_COUNT  # 740kN total
-        self.INTERNAL_RADIUS = 0.60     # m
-        
+        self.CORE_GAS_TEMP = 2800 # K
+        self.MAX_WALL_TEMP = 1200 # K, Inconel-718
+        self.CHAMBER_PRESSURE = 7.0e6 # Pa
+        self.ALLOWABLE_STRESS = 150e6 # Pa
+        self.REALISTIC_ISP = 780 # s
+        self.THRUST_PER_NTR = 185000 # N, 185kN each for heavy scaling
+        self.NTR_COUNT = 4
+        self.TARGET_THRUST_N = self.THRUST_PER_NTR * self.NTR_COUNT # 740kN total
+        self.INTERNAL_RADIUS = 0.60 # m
+
         # === NAVE COMPLETA - PROMETHEUS I MISSION (REAL SCALE) ===
-        self.MISSION_DAYS = 776         
-        self.CREW_COUNT = 6             
-        self.DELTA_V_TOTAL = 14200      # m/s, Earth-Mars-Earth
-        self.HABITAT_VOL = 380          # m³
+        self.MISSION_DAYS = 776
+        self.CREW_COUNT = 6
+        self.DELTA_V_TOTAL = 14200 # m/s, Earth-Mars-Earth
+        self.HABITAT_VOL = 380 # m³
         self.SHIELDING_AREAL_DENSITY = 20 # g/cm²
-        self.POWER_REQ_KWE = 100        # kWe
-        
+        self.POWER_REQ_KWE = 100 # kWe
+
         # Sincronizacao estrita com os dados consolidados da NASA/DOE
-        self.dry_mass = 199400          # kg (199.4 t)
+        self.dry_mass = 199400 # kg (199.4 t)
         self.total_propellant = 1127000 # kg (1,127.0 t LH2)
-        self.tanks_mass = 126300        # kg (126.3 t)
+        self.tanks_mass = 126300 # kg (126.3 t)
         self.launchpad_total_mass = self.dry_mass + self.total_propellant + self.tanks_mass # 1452.7 t
 
     def calculate_aerospike_motor(self):
@@ -47,14 +47,14 @@ class AresStarshipNTR:
         self.tw_ratio = self.TARGET_THRUST_N / (self.launchpad_total_mass * 9.81)
         self.engine_out_tw = (self.THRUST_PER_NTR * (self.NTR_COUNT - 1)) / (self.launchpad_total_mass * 9.81)
         self.h2_volume = self.total_propellant / 70.85
-        self.tank_length = self.h2_volume / (math.pi * 4.5**2)  # 9m diameter = 4.5m radius
+        self.tank_length = self.h2_volume / (math.pi * 4.5**2) # 9m diameter = 4.5m radius
         self.total_vehicle_height = 4.5 + self.tank_length + 12.0
         return self.launchpad_total_mass, self.tw_ratio, self.total_vehicle_height, self.engine_out_tw
 
     def generate_all_files(self):
         t, m_s, f, m_c = self.calculate_aerospike_motor()
         m_pad, tw, h, e_out_tw = self.calculate_starship_mass()
-        
+
         # 1. BILL OF MATERIALS (BOM) - COST MATRIX WITH TOTAL
         bom_items = [
             ["System", "Item", "Spec", "Mass_kg", "USD", "TRL"],
@@ -70,15 +70,15 @@ class AresStarshipNTR:
             ["Avionics", "ODIN AI Triple Voting Array", "100krad 10CFR52", 3800, 1200000, 7],
             ["Thermal", "Radiators Extended Core", "2000m²", 2000, 4000000, 7]
         ]
-        
-        # FIX FINANCEIRO: Soma limpa e tipada da coluna de dinheiro (USD)
+
+        # FIX 1: TypeError - somar apenas a coluna USD [4], não a linha inteira
         total_cost = sum([row[4] for row in bom_items[1:]])
         bom_data = bom_items + [["TOTAL", "", "", int(self.dry_mass), total_cost, ""]]
-        
+
         try:
-            with open("01_BOM_STARSHIP_V3.1.csv", "w", newline='') as file_bom: 
+            with open("01_BOM_STARSHIP_V3.1.csv", "w", newline='') as file_bom:
                 csv.writer(file_bom).writerows(bom_data)
-            
+
             mass = f"""ARES-STARSHIP V3.1 - MASS BREAKDOWN - Prometheus I Heavy Mission
 
 LAUNCHPAD TOTAL: {self.launchpad_total_mass/1000:.1f} t
@@ -99,16 +99,16 @@ Key Ratios:
 - Transit Window: 125 days to Mars (High-Flow Profile)
 - Tank Volume: {self.h2_volume:.1f} m³ LH2 @ 70.85 kg/m³
 """
-            with open("02_MASS_BREAKDOWN_V3.1.txt", "w") as file_mass: 
+            with open("02_MASS_BREAKDOWN_V3.1.txt", "w") as file_mass:
                 file_mass.write(mass)
-            
+
             pitch = f"""ARES-STARSHIP V3.1 - INVESTOR ONE PAGER - Prometheus I Balanced
 
 Problem: Chemical Mars = 9 months, $200M+ per crew, high radiation risks.
 Solution: 740kN (4x 185kN NTR Cluster) Nuclear Aerospike Freighter, 125-day transit.
 
 Technical Edge:
-- Thrust: {self.NTR_COUNT}x {self.THRUST_PER_NTR/1000:.0f}kN NTR = {self.TARGET_THRUST_N/1000:.0f}kN | Isp: {self.REALISTIC_ISP}s | T/W: {tw:.2f} 
+- Thrust: {self.NTR_COUNT}x {self.THRUST_PER_NTR/1000:.0f}kN NTR = {self.TARGET_THRUST_N/1000:.0f}kN | Isp: {self.REALISTIC_ISP}s | T/W: {tw:.2f}
 - Pad Mass: {self.launchpad_total_mass/1000:.1f}t | Height: {h:.1f}m | Diameter: 9m (Standard Starship Integration)
 - Crew Count: {self.CREW_COUNT} | Shielding: {self.SHIELDING_AREAL_DENSITY}g/cm² | Power: 100kWe
 - Mission Window: {self.MISSION_DAYS} days | Habitat: {self.HABITAT_VOL}m³ ATHENA Module
@@ -126,15 +126,16 @@ Milestone: 300s hot-fire validation with NASA/DOE labs
 
 Contact: Ranyellson Quintão
 ranyellson@gmail.com | +55 31 98837-8286"""
-            with open("03_INVESTOR_PITCH_V3.1.txt", "w") as file_pitch: 
+            with open("03_INVESTOR_PITCH_V3.1.txt", "w") as file_pitch:
                 file_pitch.write(pitch)
-            
+
             print("========================================================================")
             print("ARES-STARSHIP V3.1 - PROMETHEUS I REALSCALE REVIEWS COMPLETE")
             print("========================================================================")
             print(f"1. 01_BOM_STARSHIP_V3.1.csv - Complete Fleet Cost: ${total_cost/1e6:.1f}M")
             print(f"2. 02_MASS_BREAKDOWN_V3.1.txt - Pad Mass: {self.launchpad_total_mass/1000:.1f}t | T/W: {tw:.2f}")
             print(f"3. 03_INVESTOR_PITCH_V3.1.txt - {self.TARGET_THRUST_N/1000:.0f}kN | {self.CREW_COUNT} Crew | {self.MISSION_DAYS} Days")
+            # FIX 2: Fechar print e adicionar chamada da classe
             print("========================================================================")
         except IOError as e:
             print(f"File writing error: {e}")
