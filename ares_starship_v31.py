@@ -95,7 +95,8 @@ class AresStarshipNTR:
             ["Thermal", "Radiators", "2000m²", 2000, 4000000, 7],
             ["TOTAL", "", "", int(self.dry_mass), 115700000, ""]
         ]
-        with open("01_BOM_STARSHIP_V3.1.csv", "w", newline='') as f: csv.writer(f).writerows(bom_data)
+        with open("01_BOM_STARSHIP_V3.1.csv", "w", newline='') as file_bom: 
+            csv.writer(file_bom).writerows(bom_data)
         
         # 2. MASS BREAKDOWN
         mass = f"""ARES-STARSHIP V3.1 - MASS BREAKDOWN - Prometheus I Mission
@@ -116,7 +117,8 @@ Key Ratios:
 - Shielding: {self.SHIELDING_AREAL_DENSITY} g/cm² PE+H2O
 - Transit: 125 days to Mars
 """
-        with open("02_MASS_BREAKDOWN_V3.1.txt", "w") as f: f.write(mass)
+        with open("02_MASS_BREAKDOWN_V3.1.txt", "w") as file_mass: 
+            file_mass.write(mass)
         
         # 3. ONE PAGER INVESTOR
         pitch = f"""ARES-STARSHIP V3.1 - INVESTOR ONE PAGER - Prometheus I
@@ -128,7 +130,7 @@ Technical Edge:
 - Thrust: {self.NTR_COUNT}x {self.THRUST_PER_NTR/1000:.0f}kN NTR = {self.TARGET_THRUST_N/1000:.0f}kN | Isp: 780s | T/W: {tw:.2f} 
 - Pad Mass: {m_pad/1000:.1f}t | Height: {h:.1f}m | Diameter: 9m
 - Crew: {self.CREW_COUNT} | Shield: {self.SHIELDING_AREAL_DENSITY}g/cm² | Power: 100kWe
-- Mission: 776 days | Habitat: {self.HABITAT_VOL}m³ ATHENA Module
+- Mission: {self.MISSION_DAYS} days | Habitat: {self.HABITAT_VOL}m³ ATHENA Module
 - Heritage: NERVA + 10CFR52 compliant
 
 Business Case:
@@ -141,15 +143,18 @@ Milestone: 300s hot-fire, NASA/DOE validation
 
 Contact: Ranyellson Quintão
 ranyellson@gmail.com | +55 31 98837-8286"""
-        with open("03_INVESTOR_PITCH_V3.1.txt", "w") as f: f.write(pitch)
+        with open("03_INVESTOR_PITCH_V3.1.txt", "w") as file_pitch: 
+            file_pitch.write(pitch)
+        
+        # Soma do BOM pra print ficar sempre sincronizado
+        total_cost = sum([row[4] for row in bom_data[1:-1]])  # ignora header e linha TOTAL
         
         print("========================================================================")
         print("ARES-STARSHIP V3.1 - PROMETHEUS I FILES GENERATED")
         print("========================================================================")
-        print(f"1. 01_BOM_STARSHIP_V3.1.csv - Nave completa ${115700000/1e6:.1f}M")
+        print(f"1. 01_BOM_STARSHIP_V3.1.csv - Nave completa ${total_cost/1e6:.1f}M")
         print(f"2. 02_MASS_BREAKDOWN_V3.1.txt - Pad: {m_pad/1000:.1f}t | T/W: {tw:.2f}")
-        print(f"3. 03_INVESTOR_PITCH_V3.1.txt - 510kN | {self.CREW_COUNT} crew | 776 days")
-        print(f"4. Mission: Prometheus I | Shield: {self.SHIELDING_AREAL_DENSITY}g/cm² | Habitat: {self.HABITAT_VOL}m³")
+        print(f"3. 03_INVESTOR_PITCH_V3.1.txt - {self.TARGET_THRUST_N/1000:.0f}kN | {self.CREW_COUNT} crew | {self.MISSION_DAYS} days")
         print("========================================================================")
 
 if __name__ == "__main__":
