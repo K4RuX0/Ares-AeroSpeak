@@ -99,4 +99,4 @@ First time Mars has lower risk profile than climbing Everest in 1950.
 4. **Inspiration**: Every child born after 2034 grows up knowing they can leave Earth.
 5. **Geopolitical**: Ensures cislunar dominance. 450,000 direct jobs in space reactor industry.
 
-## Repository Structure
+## Repository Structure.
