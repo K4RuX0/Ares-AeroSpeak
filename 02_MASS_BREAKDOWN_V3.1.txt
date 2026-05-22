@@ -1,0 +1,17 @@
+ARES-STARSHIP V3.1 - MASS BREAKDOWN - Prometheus I Mission
+
+LAUNCHPAD TOTAL: 546.6 t
+Dry Mass: 69.8 t
+Propellant LH2: 433.5 t
+T/W Ratio: 0.10
+Total Height: 112.7 m
+
+Propulsion: 3x NTR @ 170kN = 510kN Total
+Delta-V: 14200 m/s | Isp: 780s
+Mission Duration: 776 days | Crew: 6
+Habitat Volume: 380 m³ | 63 m³/crew
+
+Key Ratios:
+- Propellant Fraction: 79.3%
+- Shielding: 20 g/cm² PE+H2O
+- Transit: 125 days to Mars
