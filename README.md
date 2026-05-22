@@ -198,14 +198,14 @@ For that reason, the values in this document should be interpreted as target arc
 
 ## 11. Repository Structure
 /
-├── http://README.md
+├── README.md
 ├── LICENSE
 ├── docs/
 │   ├── mission_concept.md
-│   ├── http://assumptions.md
-│   ├── http://calculations.md
-│   ├── http://risks.md
-│   └── http://roadmap.md
+│   ├── assumptions.md
+│   ├── calculations.md
+│   ├── risks.md
+│   └── roadmap.md
 ├── models/
 │   ├── propulsion/
 │   ├── mission_profile/
