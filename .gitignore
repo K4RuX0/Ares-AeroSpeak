@@ -1,19 +1,4 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-venv/
-.env
-
-# Dados pesados do ARES V3.1
-*.step
-*.stl
-*.obj
-*.blend
-simulations/
-data/
-*.csv
-
-# OS
-.DS_Store
-Thumbs.db
+git rm .gitigno
+git add .gitignore
+git commit -m "fix: remove typo .gitigno, keep only .gitignore"
+git push
