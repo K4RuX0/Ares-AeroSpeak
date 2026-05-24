@@ -1,20 +1,25 @@
-ARES-STARSHIP V3.1 - INVESTOR ONE PAGER - Prometheus I
+ARES-SPACE TRANSPORT V4.0 - INVESTOR ONE PAGER - TARGET 2030
 
-Problem: Chemical Mars = 9 months, high radiation.
-Solution: 740kN (4x 185kN NTR) Nuclear Aerospike, 119-day transit from Alcântara.
+Problem: Heavy cislunar and Mars payloads using conventional chemical propulsion require massive, 
+inefficient orbital refueling fleets. Nuclear options face severe international regulatory 
+barriers, radiation hazards, and prohibitive developmental costs.
+
+Solution: A Reusable Deep-Space Cargo Freighter powered by Solar Thermal Propulsion (STP) and Liquid Methane (LCH4). 
+Operating clean from Alcântara, Brazil, it cuts supply costs to a fraction of the hydrogen baseline.
 
 Technical Edge:
-- Thrust: 4x 185kN = 740kN | Isp: 920s | T/W: 0.41
-- LEO Mass: 1407.0t | Height: 266.6m | Diameter: 9m
-- Crew: 6 | Shielding: 20g/cm² | Power: 100kWe
-- Mission: 776 days | Habitat: 380m³
-- Heritage: NERVA + CNEN/AEB + 10CFR52 Compliant
-- Redundancy: Engine-out abort with 3x NTR
+- Thrust: 2x 185kN STP Aerospike Dynamic Cluster = 370kN (at 1.0 AU)
+- Real Isp: 620.0s via isentropic expansion equations of superheated methane at 3200K
+- Mass Discipline: 120.0t Dry Mass (Optimized by completely eliminating nuclear shielding weight)
+- Dimensions: 49.3m Height | 9.0m Diameter (Perfect structural stabilization for 1,130t density)
+- Crew Support: 6 Astronautas | ATHENA Habitat: 380m³ | Power Array: 100kWe
+- Zero Corrosion: Tantalum-Hafnium Carbide (Ta4HfC5) chamber lined with an atomic Iridium film
+- Zero Fuel Waste: Integrated Active Zero Boil-Off (ZBO) cryogenic refrigeration pulse tube system
+Business Case & Commercial Edge:
+- Unbeatable Vehicle Unit Cost: $52.1M (Drastically reduced by shifting from nuclear reactors to inflatable mirrors)
+- Phase I (Lunar Fleet Market): Carries 55.0t of payload to lunar orbit and returns autonomously without cislunar refueling.
+- Phase II (Mars Route): Injects 71.0t of payload directly toward Mars via a high-energy Trans-Mars Injection (TMI) burn.
+- Environmental Advantage: 100% radiation-free lifecycle. Fast-track environmental licensing and zero geopolitical risk.
 
-Business Case:
-- Unit Cost: $116.2M
-- Payload TMI: 71t
-- No refuel required - margin 833 m/s
-
-Ask: $22M Seed -> TRL-4 demonstrator in 18mo
-Contact: ranyellson@gmail.com
+Ask: $22M Seed Round to build and space-test an orbital TRL-7 inflatable parabolic mirror demonstrator within 18 months.
+Systems Engineering Contact: ranyellson@gmail.com
