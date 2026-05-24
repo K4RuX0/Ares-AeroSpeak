@@ -1,5 +1,5 @@
 # =========================================================================
-# ARES-STARSHIP V4.0 - FULL VEHICLE EXECUTION READY (2x STP GREEN PROPULSION)
+# ARES-SPACE TRANSPORT V4.0 - FULL VEHICLE EXECUTION READY (2x STP SYSTEM)
 # STATUS: CONVERTED FROM NUCLEAR TO SOLAR THERMAL | METHOX-STP HYBRID | 2030 TARGET
 # REVISION: IRIDIUM/Ta4HfC5 COATING | ZERO CORROSION | ACTIVE ZBO INTEGRATED
 # CONTACT: ranyellson@gmail.com
@@ -9,52 +9,52 @@ import csv
 
 class AresStarshipSTP:
     def __init__(self):
-        # === MOTOR TÉRMICO SOLAR (STP) - CLUSTER 2x UNITS V4.0 ===
-        self.SOLAR_CONSTANT_EARTH = 1361.0   # Irradiância solar média na órbita da Terra (W/m²)
-        self.MIRROR_AREA_PER_ENGINE = 1250.0 # m² de espelhos parabólicos infláveis por motor
-        self.OPTICAL_EFFICIENCY = 0.85       # Eficiência de reflexão da película de Mylar aluminizada
-        self.ABSORBER_EFFICIENCY = 0.78      # Eficiência do trocador cerâmico retendo calor
-        self.R_METHANE = 518.3               # Constante específica do gás Metano (J/kg·K)
-        self.GAMMA_METHANE = 1.32            # Razão de calores específicos (Cp/Cv) do LCH4 superaquecido
-        self.G0 = 9.80665                    # Aceleração da gravidade padrão (m/s²)
+        # === SOLAR THERMAL PROPULSION (STP) - V4.0 CLUSTER 2x UNITS ===
+        self.SOLAR_CONSTANT_EARTH = 1361.0   # Mean solar irradiance at Earth orbit (W/m²)
+        self.MIRROR_AREA_PER_ENGINE = 1250.0 # Inflatable parabolic mirror area per engine (m²)
+        self.OPTICAL_EFFICIENCY = 0.85       # Reflectivity of aluminized Mylar film
+        self.ABSORBER_EFFICIENCY = 0.78      # Ceramic heat exchanger thermal retention factor
+        self.R_METHANE = 518.3               # Specific gas constant for Methane (J/kg·K)
+        self.GAMMA_METHANE = 1.32            # Specific heat ratio (Cp/Cv) for superheated LCH4
+        self.G0 = 9.80665                    # Standard gravity acceleration (m/s²)
         
         self.ENGINE_COUNT = 2
-        self.THRUST_PER_STP_NOMINAL = 185000 # N (185 kN por bocal em 1.0 AU)
-        self.TARGET_THRUST_N = self.THRUST_PER_STP_NOMINAL * self.ENGINE_COUNT # 370kN total em LEO
-        self.CHAMBER_PRESSURE = 5.5e6        # Pa (Pressão otimizada para expansão STP)
-        self.ALLOWABLE_STRESS = 180e6        # Pa (Resistência mecânica da liga Ta4HfC5 a altas temperaturas)
-        self.CHAMBER_COATING = "Iridium / Ta4HfC5 (Corrosão Zero)"
-        self.INTERNAL_RADIUS = 0.45          # m (Geometria compactada para Metano)
+        self.THRUST_PER_STP_NOMINAL = 185000 # N (185 kN per nozzle at 1.0 AU)
+        self.TARGET_THRUST_N = self.THRUST_PER_STP_NOMINAL * self.ENGINE_COUNT # 370 kN total LEO thrust
+        self.CHAMBER_PRESSURE = 5.5e6        # Pa (Optimized expansion chamber pressure)
+        self.ALLOWABLE_STRESS = 180e6        # Pa (Ta4HfC5 high-temperature mechanical yield stress)
+        self.CHAMBER_COATING = "Iridium / Ta4HfC5 (Zero Corrosion Baseline)"
+        self.INTERNAL_RADIUS = 0.45          # m (Compacted throat radius for LCH4)
 
-        # === DADOS DO PROPONENTE E REFRIGERAÇÃO CRUCIAL (ZBO) ===
-        self.METHANE_DENSITY = 422.6         # kg/m³ (Metano líquido a 112K é 6x mais denso que o LH2!)
-        self.TOTAL_PROPELLANT = 1130000      # kg (1.130,0 t de LCH4 máximo nos tanques)
-        self.CRYOCOOLER_EFFICIENCY_COP = 0.05 # Coeficiente de Performance real do ZBO ativo a 110K
-        self.TANK_SURFACE_AREA = 565.0       # m² (Área de troca de calor da fuselagem de 9m)
+        # === CRYOGENIC STORAGE & ZERO BOIL-OFF (ZBO) SUBSYSTEM ===
+        self.METHANE_DENSITY = 422.6         # kg/m³ (Liquid methane density at 112 K)
+        self.TOTAL_PROPELLANT = 1130000      # kg (1,130.0 metric tons maximum load capacity)
+        self.CRYOCOOLER_EFFICIENCY_COP = 0.05 # Pulse tube cryocooler Coefficient of Performance at 110 K
+        self.TANK_SURFACE_AREA = 565.0       # m² (9-meter diameter hull total heat exchange area)
 
-        # === ESPECIFICAÇÕES DAS MISSÕES SEQUENCIAIS (2030 ROADMAP) ===
-        self.LAUNCH_SITE = "Alcântara, Brazil (2.3°S) - Operação Comercial Limpa"
-        self.EARTH_BONUS = 463               # m/s (Bônus de rotação equatorial)
+        # === SEQUENTIAL MISSION ARCHITECTURE (2030 ROADMAP) ===
+        self.LAUNCH_SITE = "Alcantara Space Center, Brazil (2.3°S) - Clean Commercial Operations"
+        self.EARTH_BONUS = 463               # m/s (Equatorial rotation tangential velocity bonus)
         self.CREW_COUNT = 6
         self.HABITAT_VOL = 380               # m³
         
-        # FASE I - Missão de Validação e Alta Carga Útil Lunar (Ida e Volta Autônoma)
-        self.LUNAR_PAYLOAD = 55000           # kg (55 t líquidas extraídas ou transportadas)
-        self.LUNAR_DELTA_V_REAL = 8400.0     # m/s (Inclui 5% de margem para perdas por gravidade em STP)
-        self.LUNAR_DAYS = 28                 # Dias totais de circuito cislunar e validação
+        # PHASE I - Cislunar High-Yield Fleet Validation (Autonomous Round-Trip)
+        self.LUNAR_PAYLOAD = 55000           # kg (55.0 t net delivery payload)
+        self.LUNAR_DELTA_V_REAL = 8400.0     # m/s (Includes 5% gravity loss margin for continuous STP)
+        self.LUNAR_DAYS = 28                 # Total duration of cislunar checkout transit
 
-        # FASE II - Missão Principal Interplanetária (Marte - Trânsito Rápido)
-        self.MARS_PAYLOAD = 71000            # kg (71 t injetadas rumo a Marte - TMI)
-        self.MARS_DELTA_V_REAL = 4200.0      # m/s (Queima apenas de injeção a partir de LEO reabastecido)
+        # PHASE II - Interplanetary Cargo Transport (Mars Direct - Project Prometheus I)
+        self.MARS_PAYLOAD = 71000            # kg (71.0 t Trans-Mars Injection net payload)
+        self.MARS_DELTA_V_REAL = 4200.0      # m/s (LEO escape injection delta-V burn profile)
         self.MARS_DAYS = 776                 # Duração total da missão Prometheus I
 
-        # === ORÇAMENTO DE MASSA RECALCULADO V4.0 ===
+        # === SYSTEMS MASS BUDGET RECALIBRATION V4.0 ===
         self.dry_mass = 120000               # kg (120.0 t - Sem peso nuclear ou blindagens)
         self.tanks_mass = 75000              # kg (75.0 t - Estrutura menor devido à densidade do metano)
-        self.launchpad_total_mass = self.dry_mass + self.TOTAL_PROPELLANT + self.tanks_mass # 1.325,0 t em LEO
+        self.launchpad_total_mass = self.dry_mass + self.TOTAL_PROPELLANT + self.tanks_mass # 1,325.0 t em LEO
 
     def calculate_stp_aerospike_physics(self, distance_au, mass_flow_rate_kg_s=15.0):
-        """Calcula com precisão termodinâmica o empuxo real do bocal baseado na luz solar."""
+        """Calculates aerodynamic thrust and chamber thermodynamics based on inverse-square law solar flux."""
         available_flux = self.SOLAR_CONSTANT_EARTH / (distance_au ** 2)
         total_mirror_area = self.MIRROR_AREA_PER_ENGINE * self.ENGINE_COUNT
         thermal_power_w = available_flux * total_mirror_area * self.OPTICAL_EFFICIENCY * self.ABSORBER_EFFICIENCY
@@ -80,7 +80,7 @@ class AresStarshipSTP:
         return wall_thickness, spike_mass, real_isp, real_thrust_n, chamber_temp_k, thermal_power_w
 
     def calculate_zbo_thermal_leak(self, days, distance_au):
-        """Calcula o balanço térmico do sistema Zero Boil-Off (ZBO)."""
+        """Calculates multi-layer background thermal leak and active cryocooler kWe power requirements."""
         external_thermal_flux = 400.0 / (distance_au ** 2)  
         mli_transmittance = 0.001                            
         heat_leak_watts = self.TANK_SURFACE_AREA * external_thermal_flux * mli_transmittance
@@ -90,7 +90,7 @@ class AresStarshipSTP:
         
         return energy_consumed_kwh, electrical_power_watts / 1000.0
     def evaluate_rocket_equation(self, payload_kg, delta_v_target, real_isp):
-        """Aplica a Equação de Tsiolkovsky real para determinar a fração de combustível consumida."""
+        """Applies numerical Tsiolkovsky equations to verify system kinetic closure margins."""
         v_e = real_isp * self.G0
         mass_initial = self.launchpad_total_mass + payload_kg
         mass_final_required = mass_initial / math.exp(delta_v_target / v_e)
@@ -113,122 +113,124 @@ class AresStarshipSTP:
         orbital_tw = thrust_n / (self.dry_mass * self.G0)
         engine_out_tw = (thrust_n / 2) / (self.dry_mass * self.G0) 
 
-        # === GERAÇÃO DO ARQUIVO 01: BILL OF MATERIALS (BOM) ===
+        # === GENERATION: FILE 01 - BILL OF MATERIALS (BOM) ===
         bom_items = [
             ["System", "Item", "Spec", "Mass_kg", "USD", "TRL_2030"],
             ["Propulsion", "Aerospike Chamber Expansion Line", f"{wall_t*1000:.1f}mm Ta4HfC5 Matrix x2", int(spike_m*0.3), 2500000, 7],
             ["Propulsion", "Inner Engine Iridium Film Coating", "Anti-corrosive chemical barrier", 150, 4500000, 8],
-            ["Propulsion", "Inflatable Parabolic Mirror Array", "1250m² Mylar Coated x2 Units", 1200, 3100000, 7],
+            ["Propulsion", "Inflatable Parabolic Mirror Array", "1250m2 Mylar Coated x2 Units", 1200, 3100000, 7],
             ["Propulsion", "LCH4 Turbopumps High-Density Array", "15.0 kg/s flow operational", 3500, 7000000, 8],
             ["Structure", "LCH4 Cryogenic Tank Al-Li (9m)", f"9mD x {tank_length:.1f}mH Heavy Duty", int(self.tanks_mass), 6500000, 9],
-            ["Structure", "ATHENA Habitat Core Module", f"{self.HABITAT_VOL}m³ Internal Vol", 10000, 15000000, 8],
+            ["Structure", "ATHENA Habitat Core Module", f"{self.HABITAT_VOL}m3 Internal Vol", 10000, 15000000, 8],
             ["Thermal", "Active ZBO Pulse Tube Cryocoolers", "2.5 kW Active Helium Loop Array", 1800, 3800000, 7],
             ["Thermal", "MLI + Silica Aerogel Insulation Shield", "0.001 Transmittance Factor Matrix", 2200, 1200000, 9],
             ["EHS", "ECLSS Regenerative Closed-Loop", "90% Water & Oxygen Recycling", 4500, 12000000, 7],
             ["Avionics", "ODIN AI Navigation & Autonomous Core", "Radiation Hardened Avionics Architecture", 1500, 2100000, 8]
         ]
         
-        total_cost = sum([row[4] for row in bom_items[1:]])
-        bom_data = bom_items + [["TOTAL", "VEÍCULO COMPLETO V4.0", "STP METHANE CONFIG", int(self.dry_mass), total_cost, ""]]
+        # Type fix: Summing only the primary currency integers located at index 4
+        total_cost = sum([int(row[4]) for row in bom_items[1:]])
+        bom_data = bom_items + [["TOTAL", "COMPLETE VEHICLE V4.0", "STP METHANE CONFIG", int(self.dry_mass), total_cost, ""]]
 
         try:
             with open("01_BOM_STARSHIP_V3.1.csv", "w", newline='') as file_bom:
                 csv.writer(file_bom).writerows(bom_data)
 
-            # === GERAÇÃO DO ARQUIVO 02: MASS BREAKDOWN & MISSION REPORT ===
+            # === GENERATION: FILE 02 - MASS BREAKDOWN REPORT ===
             lunar_zbo_kwh, lunar_zbo_kw = self.calculate_zbo_thermal_leak(self.LUNAR_DAYS, distance_au=1.0)
             mars_zbo_kwh, mars_zbo_kw = self.calculate_zbo_thermal_leak(self.MARS_DAYS, distance_au=1.2) 
 
             mass_report = f"""ARES-SPACE TRANSPORT V4.0 - REALISTIC EXECUTION DESIGN - TARGET 2030
-CONFIGURAÇÃO DE PROPULSÃO: SOLAR THERMAL (STP) COM PARABÓLICAS INFLÁVEIS
-COMPATIBILIDADE INDUSTRIAL COM ENGENHARIA DE CORROSÃO ZERO E ZERO BOIL-OFF
+PROPULSION CONFIGURATION: SOLAR THERMAL PROPULSION (STP) VIA INFLATABLE CONCENTRATORS
+INDUSTRIAL SYNC: ANTICORROSIVE IRIDIUM COATING & ACTIVE ZERO BOIL-OFF SYSTEM
 
-BASE DE LANÇAMENTO: {self.LAUNCH_SITE}
-CAPACIDADE EM ORBITA DE LANÇAMENTO (LEO): {self.launchpad_total_mass/1000:.1f} t
-Massa Seca Estrutural (Dry Mass): {self.dry_mass/1000:.1f} t
-Propelente Otimizado (Metano Líquido LCH4): {self.TOTAL_PROPELLANT/1000:.1f} t
-Peso de Estrutura de Tanques Al-Li: {self.tanks_mass/1000:.1f} t
-Razão de Empuxo/Peso (T/W Orbital em LEO): {orbital_tw:.2f}
-Redundância de Motor (Engine-Out T/W - 1/2 ativo): {engine_out_tw:.2f}
-Altura Total Calculada do Veículo: {total_height:.1f} m
-Volume Interno do Tanque Necessário: {lch4_volume_m3:.1f} m³
-
-------------------------------------------------------------------------
-ESPECIFICAÇÕES DE PRODUTO DO MOTOR TERMOLÓGICO SOLAR
-------------------------------------------------------------------------
-Quantidade de Bocais Operando: {self.ENGINE_COUNT}x STP Aerospike Arrays
-Empuxo Combinado Total (LEO): {thrust_n/1000:.1f} kN
-Impulso Específico Real Calculado (Isp): {real_isp:.1f} s
-Temperatura de Trabalho na Câmara de Expansão: {tc_k:.1f} K
-Potência Térmica Útil Absorvida do Sol: {power_w/1e6:.2f} MW
-Proteção Química Interna: {self.CHAMBER_COATING}
+LAUNCH SITE INTERFACE: {self.LAUNCH_SITE}
+LAUNCHPAD INJECTION CAPACITY (LEO TOTAL): {self.launchpad_total_mass/1000:.1f} t
+Airframe Dry Mass: {self.dry_mass/1000:.1f} t
+Optimized Liquid Methane Mass (LCH4): {self.TOTAL_PROPELLANT/1000:.1f} t
+Al-Li Cryogenic Shell Tank Mass: {self.tanks_mass/1000:.1f} t
+Thrust-to-Weight Ratio (LEO Orbital T/W): {orbital_tw:.2f}
+Cluster Redundancy Profile (Engine-Out T/W - 1/2 Active): {engine_out_tw:.2f}
+Total Calculated Vehicle Structural Height: {total_height:.1f} m
+Required Internal Tank Core Volume: {lch4_volume_m3:.1f} m3
 
 ------------------------------------------------------------------------
-FASE I: MISSÃO LOGÍSTICA LUNAR (IDA E VOLTA CISLUNAR SEM REABASTECER)
+SOLAR THERMAL EXPANSION ENGINE PRODUCT SPECIFICATIONS
 ------------------------------------------------------------------------
-Carga Útil Alocada (Lunar Payload): {self.LUNAR_PAYLOAD/1000:.1f} t
-Delta-V Requerido com Margem Gravitacional: {self.LUNAR_DELTA_V_REAL} m/s
-Gasto de Metano Líquido Computado: {lunar_fuel_kg/1000:.1f} t
-Margem de Sobra de Combustível nos Tanques: {lunar_margin_kg/1000:.1f} t
-Manutenção Ativa do Combustível (ZBO): {lunar_zbo_kw:.2f} kW elétricos estáveis
-Consumo Energético Total da Refrigeração na Lua: {lunar_zbo_kwh:.1f} kWh
-VIABILIDADE CINÉTICA DA FASE I: {"APROVADO PARA EXECUÇÃO" if lunar_ok else "REJEITADO - EXCESSO DE PESO"}
+Active Expanding Nozzles: {self.ENGINE_COUNT}x STP Linear Aerospike Arrays
+Combined Gross Thrust (LEO Core): {thrust_n/1000:.1f} kN
+Calculated Vacuum Specific Impulse (Isp): {real_isp:.1f} s
+Expansion Chamber Working Temperature: {tc_k:.1f} K
+Net Absorbed Solar Thermal Power Core: {power_w/1e6:.2f} MW
+Chemical Wall Shielding: {self.CHAMBER_COATING}
 
 ------------------------------------------------------------------------
-FASE II: MISSÃO INTERPLANETÁRIA PROMETHEUS I (JORNADA DIRETA PARA MARTE)
+PHASE I: LUNAR MISSION LOGISTICS (AUTONOMOUS CISLUNAR ROUND-TRIP)
 ------------------------------------------------------------------------
-Carga Útil Injetada rumo a Marte (TMI Payload): {self.MARS_PAYLOAD/1000:.1f} t
-Delta-V Requerido para Manobra de Escape de LEO: {self.MARS_DELTA_V_REAL} m/s
-Gasto de Combustível para a Ignição de Escape: {mars_fuel_kg/1000:.1f} t
-Sobra de Combustível Armazenada para Manobras em Marte: {mars_margin_kg/1000:.1f} t
-Manutenção Ativa do Combustível (ZBO a caminho de Marte): {mars_zbo_kw:.2f} kW elétricos
-Consumo Energético Total do ZBO no Trânsito Interplanetário: {mars_zbo_kwh:.1f} kWh
-VIABILIDADE CINÉTICA DA FASE II: {"APROVADO PARA EXECUÇÃO" if mars_ok else "REJEITADO - EXCESSO DE PESO"}
+Allocated Delivery Payload (Lunar Payload): {self.LUNAR_PAYLOAD/1000:.1f} t
+Required Kinetic Delta-V (With Gravity Losses): {self.LUNAR_DELTA_V_REAL} m/s
+Computed Liquid Methane Consumption Fleet: {lunar_fuel_kg/1000:.1f} t
+Remaining Fuel Tank Margin Overhead: {lunar_margin_kg/1000:.1f} t
+Active Thermal Fuel Preservation (ZBO): {lunar_zbo_kw:.2f} kWe Steady
+Total Lunar Cooling Mission Power Consumption: {lunar_zbo_kwh:.1f} kWh
+PHASE I KINETIC CLOSURE VIABILITY: {"APPROVED FOR FLIGHT" if lunar_ok else "REJECTED - MASS OVERFLOW"}
 
-Relações Estruturais de Projeto:
-- Fração de Propelente sobre Massa Total: {self.TOTAL_PROPELLANT/self.launchpad_total_mass*100:.1f}%
-- Densidade da Matriz de Isolamento MLI: Aerogel de Sílica Integrado
-- Volume de Habitabilidade Humana ATHENA: {self.HABITAT_VOL} m³
+------------------------------------------------------------------------
+PHASE II: INTERPLANETARY MISSION PROMETHEUS I (DEEP-SPACE MARS TRANSIT)
+------------------------------------------------------------------------
+Trans-Mars Injection Payload (TMI Payload): {self.MARS_PAYLOAD/1000:.1f} t
+Required LEO Escape Maneuver Delta-V: {self.MARS_DELTA_V_REAL} m/s
+Escape Burn Methane Mass Consumption: {mars_fuel_kg/1000:.1f} t
+Retained Mars Injection Fuel Safeguard: {mars_margin_kg/1000:.1f} t
+Active Transit Thermal Fuel Preservation (ZBO): {mars_zbo_kw:.2f} kWe
+Total Interplanetary Journey ZBO Power Draw: {mars_zbo_kwh:.1f} kWh
+PHASE II KINETIC CLOSURE VIABILITY: {"APPROVED FOR FLIGHT" if mars_ok else "REJECTED - MASS OVERFLOW"}
+
+Structural Configuration Coefficients:
+- Propellant Mass Fraction Over Gross Weight: {self.TOTAL_PROPELLANT/self.launchpad_total_mass*100:.1f}%
+- Insulation Thermal Matrix Density: Silica Aerogel Integrated Multi-Layer Shield
+- ATHENA Onboard Human Habitable Volume: {self.HABITAT_VOL} m3
 """
             with open("02_MASS_BREAKDOWN_V3.1.txt", "w") as file_mass:
                 file_mass.write(mass_report)
 
-            # === GERAÇÃO DO ARQUIVO 03: INVESTOR PITCH (UM PÁGINA) ===
+            # === GENERATION: FILE 03 - INVESTOR PITCH (ONE-PAGER) ===
             pitch = f"""ARES-SPACE TRANSPORT V4.0 - INVESTOR ONE PAGER - TARGET 2030
 
-Problema: Missões interplanetárias e lunares pesadas utilizando propulsão química convencional 
-exigem frotas massivas de reabastecimento. Opções nucleares enfrentam restrições regulatórias severas e custos proibitivos.
+Problem: Heavy cislunar and interplanetary transport using traditional chemical propulsion 
+forces massive, inefficient propellant-depot architectures. Fission alternatives meet absolute 
+geopolitical, regulatory, and financial barriers that stall execution timelines.
 
-Solução: Cargueiro Espacial Reutilizável movido a Propulsão Térmica Solar (STP) e Metano Líquido. 
-Custo de insumos reduzido a frações do hidrogênio, operando de forma limpa a partir de Alcântara, Brasil.
+Solution: A Reusable Deep-Space Cargo Freighter powered by Solar Thermal Propulsion (STP) and Liquid Methane. 
+Drastically drops refueling launch chains, operating clean from Alcantara Space Center, Brazil.
 
-Vantagens Competitivas de Engenharia (Batendo de Frente com Gigantes em 2030):
-- Custo de Desenvolvimento: Eliminou a necessidade de urânio enriquecido e salvaguardas radiológicas.
-- Corrosão Anulada: Revestimento de Irídio com liga de Carboneto de Tântalo-Háfnio garante reuso imediato do bocal.
-- Desperdício Zero: Tecnologia Criogênica Active Zero Boil-Off (ZBO) mantendo o combustível líquido por tempo indefinido.
-- Desempenho Real: Isp de {real_isp:.1f}s com empuxo de {thrust_n/1000:.1f} kN em LEO.
-- Versatilidade de Mercado: Um único veículo validado em duas etapas estratégicas:
-  * Fase I (Lua): Leva {self.LUNAR_PAYLOAD/1000:.0f}t de carga líquida e retorna de forma totalmente autônoma sem reabastecer.
-  * Fase II (Marte): Garante a injeção transmarte de {self.MARS_PAYLOAD/1000:.0f}t de carga útil pura.
+Technical Competitive Edge (Challenging Aerospace Giants by 2030):
+- Low CAPEX Framework: Zero radioactive containment requirements or nuclear handling overheads.
+- Anti-Corrosive Barrier: Atomic Iridium layer bonded over Ta4HfC5 ceramic grants instant engine reusability.
+- Zero Fuel Waste: High-TRL Active Zero Boil-Off (ZBO) mechanical cryocoolers preserve propellant mass indefinitely.
+- Verified Kinetics: Delivers a real {real_isp:.1f}s specific impulse with a {thrust_n/1000:.1f} kN LEO core burn.
+- Versatile Revenue Generation: Single modular design executing two high-yield milestones:
+  * Phase I (Moon Market): Delivers {self.LUNAR_PAYLOAD/1000:.0f}t of net payload and returns to LEO on a zero-refuel round-trip.
+  * Phase II (Mars Market): Stabilizes a high-energy Trans-Mars Injection delivering {self.MARS_PAYLOAD/1000:.0f}t payload.
 
-Modelo de Custos e Negócios:
-- Custo Unitário Projetado do Veículo: \${total_cost/1e6:.1f}M
-- Licenciamento Ambiental: Operação limpa de pegada de carbono reduzida, 100% livre de radiação.
+Financial & Operating Modeling:
+- Projected Vehicle Unit Production Cost: \${total_cost/1e6:.1f}M
+- Regulatory Profiling: 100% radiation-free lifecycle, fast-tracking environmental approvals.
 
-Solicitação de Rodada de Investimento: Seed de Atualização Tecnológica para Protótipo de Espelho Inflável TRL-7.
-Contato Engenharia de Sistemas: ranyellson@gmail.com"""
+Funding Request: Seed round to finalize and space-test a vacuum deployment TRL-7 inflatable mirror demonstrator.
+Systems Engineering Direct Contact: ranyellson@gmail.com"""
             with open("03_INVESTOR_PITCH_V3.1.txt", "w") as file_pitch:
                 file_pitch.write(pitch)
 
             print("========================================================================")
-            print("ARES-STARSHIP V4.0 - PROMETHEUS I & LUNAR PHASE INTEGRATION COMPLETE")
+            print("ARES-SPACE TRANSPORT V4.0 - SYSTEMS INTEGRATION COMPLETE")
             print("========================================================================")
-            print(f"1. BOM GERADO (01_BOM_STARSHIP_V3.1.csv): \${total_cost/1e6:.1f}M")
-            print(f"2. RELATÓRIO DE MASSAS REALISTA (02_MASS_BREAKDOWN_V3.1.txt): {real_isp:.1f}s Isp")
-            print(f"3. EXECUTIVE INVESTOR PITCH (03_INVESTOR_PITCH_V3.1.txt): Pronto p/ 2030")
+            print(f"1. BOM COMPILATION SUCCESS (01_BOM_STARSHIP_V3.1.csv): \${total_cost/1e6:.1f}M")
+            print(f"2. SYSTEMS MASS REPORT SUCCESS (02_MASS_BREAKDOWN_V3.1.txt): {real_isp:.1f}s Isp")
+            print(f"3. EXECUTIVE INVESTOR PITCH SUCCESS (03_INVESTOR_PITCH_V3.1.txt): Synced")
             print("========================================================================")
         except IOError as e:
-            print(f"Erro crítico de escrita de arquivos: {e}")
+            print(f"Critical I/O error writing mission files: {e}")
 
 if __name__ == "__main__":
     AresStarshipSTP().generate_all_files()
