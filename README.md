@@ -1,260 +1,72 @@
-# ARES-STARSHIP V3.1 — Prometheus I Mission
+# ARES-SPACE TRANSPORT V4.0 — Project Prometheus I
 
-**Manned Interplanetary Freighter with Nuclear-Thermal Aerospike Propulsion**  
-`STATUS: CONCEPTUAL DESIGN` | `AUTHOR: RANYELLSON QUINTÃO` | `DATE: 2026-05-22` | `LAUNCH SITE: ALCÂNTARA, BRAZIL`
+[![Python 3.10+](https://shields.io)](https://python.org)
+[![License: MIT](https://shields.io)](https://opensource.org)
+[![Status: Conceptual Design](https://shields.io)]()
+[![Launch Site: Alcântara, Brazil](https://shields.io)]()
 
-> ARES V3.1 is not designed to carry six people to Mars. It is designed to extend human civilization beyond Earth.
+**ARES V4.0** é um modelo de arquitetura conceitual e simulação computacional em código aberto para um cargueiro espacial reutilizável de alta eficiência. Originalmente projetado com propulsão nuclear, o projeto foi totalmente atualizado para a versão 4.0 para atender às demandas de viabilidade comercial, segurança regulatória e sustentabilidade com foco no horizonte de **2030**.
 
----
-
-## Mission Summary: Prometheus I
-
-| Parameter | Value |
-| --- | --- |
-| **Objective** | Transport 6 crew + 71 t payload to Mars orbit with Earth return |
-| **Total Duration** | 776 days |
-| **Vehicle** | ARES-STARSHIP V3.1 — Reusable NTR Interplanetary Freighter |
-| **Launch Window** | 2034 |
+A espaçonave opera em rotas logísticas entre a Órbita Baixa da Terra (LEO), o espaço cislunar (Lua) e trânsitos interplanetários rumo a Marte, decolando e sendo reabastecida a partir do **Centro de Lançamento de Alcântara (CLA), Brasil**.
 
 ---
 
-## 1. Vehicle Overview
+## 🚀 Inovações e Atualizações da Versão 4.0
 
-ARES-STARSHIP V3.1 is a conceptual reusable interplanetary transport vehicle designed for crewed Mars missions with return capability. The architecture combines nuclear-thermal propulsion, aerospike nozzle efficiency, and a long-duration habitation module optimized for deep-space operations.
+Para maximizar o custo-benefício e eliminar os gargalos de engenharia da versão anterior, a arquitetura V4.0 implementa quatro pilares fundamentais:
 
-### 1.1 General Specifications
-| Parameter | Value | Note |
-| --- | --- | --- |
-| Total Height | 84.6 m | Optimized 4x NTR profile |
-| Diameter | 9 m | Starship compatible |
-| Dry Mass | 199.4 t | Includes 4x NTR cluster + ATHENA |
-| Fueled Mass in LEO | 1,452.7 t | 1,127.0 t LH2 + 199.4 t dry + 126.3 t tanks/reserve |
-| Payload to TMI | 71 t | Post-TMI injection toward Mars |
-| Payload to Mars Surface | 45 t | After MOI and EDL losses |
-| Crew | 6 | Long-duration mission |
-
-### 1.2 Propulsion System
-1. **Configuration**: 4x NTR units producing 185 kN each, for a total of 740 kN in vacuum
-2. **Core**: Low-enriched uranium in a UC-ZrC matrix, operating at 2800 K
-3. **Propellant**: Liquid hydrogen stored at 20 K
-4. **Vacuum Isp**: 780 s
-5. **Nozzle**: Truncated linear aerospike with carbon-carbon structure and NbC coating
-6. **Advantages**: Altitude compensation, differential thrust vectoring, and improved high-vacuum performance
-7. **Service Life**: 15 hours certified burn time
-8. **Redundancy**: Loss of one engine preserves abort capability to LEO
-
-### 1.3 ATHENA Crew Module
-1. **Habitable Volume**: 380 m³ total
-2. **ECLSS**: Closed-loop system with 90% water and oxygen recycling
-3. **Radiation Shielding**: 20 cm polyethylene plus water shielding
-4. **Artificial Gravity**: Cable rotation system at 2.5 RPM for 0.38 g during cruise
-5. **Onboard AI**: ODIN manages navigation, reactor coordination, and life support supervision
-6. **Crew Support**: Gym, medical lab, and partial hydroponic food production
+1. **Propulsão Térmica Solar (STP):** Substituição completa de reatores a urânio por concentradores parabólicos infláveis de alta precisão. O sistema capta a radiação solar direta para superaquecer o propelente a temperaturas extremas, gerando um impulso específico ($I_{sp}$) de **620 segundos** sem os riscos ou o peso morto de blindagens radiológicas.
+2. **Migração para Metano Líquido ($LCH_4$):** O combustível foi alterado de hidrogênio molecular para metano. Isso reduziu drasticamente o volume físico necessário para os tanques (mantendo a compatibilidade de 9m de diâmetro), barateou o custo dos insumos em Alcântara e viabilizou a futura produção local por ISRU (Reação de Sabatier) em Marte.
+3. **Corrosão Zero até 2030:** A câmara de absorção e troca térmica utiliza uma liga refratária de **Carboneto de Tântalo-Háfnio ($Ta_4HfC_5$)** revestida internamente com uma película fina de **Irídio**. Isso anula a oxidação pelo combustível e a fadiga química causada pelo fluxo de gás em altas temperaturas.
+4. **Tecnologia Zero Boil-Off (ZBO):** Para eliminar a evaporação e perda invisível do metano no espaço profundo, a fuselagem integra isolamento de múltiplas camadas (MLI) acoplado a crio-resfriadores elétricos ativos (*Pulse Tube Cryocoolers*), mantendo o combustível liquefeito de forma contínua.
 
 ---
 
-## 2. Crew Architecture
+## 📐 Especificações Técnicas e Orçamento de Massa
 
-**Design philosophy**: Minimum crew, overlapping skill sets, and psychological redundancy.
 
-| Position | Primary | Secondary | Selection Criterion |
-| --- | --- | --- | --- |
-| Commander | Pilot / Astronaut | Nuclear Engineer | 15+ years flight experience and leadership |
-| Pilot / Flight Engineer | Spacecraft Operations | Systems Engineering | ISS experience + NTR test exposure |
-| Chief Reactor Engineer | Nuclear Physics | Mechanical Engineering | Naval reactor operator qualification |
-| Flight Surgeon | Emergency Medicine | Biology / Botany | Surgery + ECLSS + psychology |
-| Chief Scientist | Planetary Geology | Exobiology | Extreme field research experience |
-| Mission Engineer | Robotics / EVA | Geotech / Construction | Habitat deployment and heavy equipment ops |
-
-**Training Standard**: 24 months of isolated team preparation. Group compatibility is treated as a mission-critical variable.
-
----
-
-## 3. Mission Profile
-
-### Phase 1 — LEO Assembly | T+0 to T+30
-Four launches assemble the ARES vehicle and crew in 400 km orbit. Twelve tanker flights deliver the liquid hydrogen required for trans-Mars injection.
-
-### Phase 2 — Trans-Mars Injection | T+31
-A 28 min 14 s burn places the vehicle on its interplanetary trajectory. The propulsion system delivers the required delta-v with operational margin.
-
-### Phase 3 — Cruise | T+32 to T+150
-The vehicle enters a 119 day cruise phase. Artificial gravity is maintained through rotation, and storm shelter procedures remain active throughout transit.
-
-### Phase 4 — Mars Orbit Insertion | T+151
-A 22 minute capture burn inserts the vehicle into Mars orbit. Redundant engine configuration preserves abort flexibility and mission continuity.
-
-### Phase 5 — Mars Operations | T+152 to T+650
-The crew supports a 498 day mission phase focused on surface operations, base construction, ISRU deployment, and resource production for return logistics.
-
-### Phase 6 — TEI and Return | T+651 to T+776
-The return sequence begins with departure burn, followed by cruise, Earth arrival, and aerocapture-assisted recovery.
+| Parâmetro | Valor Nominal (V4.0) |
+| :--- | :--- |
+| **Altura Total** | 84.6 metros |
+| **Diâmetro da Fuselagem** | 9.0 metros |
+| **Massa Seca (Ship Dry Mass)** | 120.0 toneladas (Otimizada) |
+| **Capacidade Máxima de Propelente ($LCH_4$)** | 1130.0 toneladas |
+| **Configuração de Motores** | 2x Motores STP Dinâmicos (Cluster Redundante 1/2) |
+| **Empuxo Total (Órbita da Terra)** | 370 kN ($2 \times 185 \text{ kN}$) |
+| **Capacidade de Carga Útil (Apenas Ida - Lua)** | **145 toneladas** (Limite Estrutural) |
+| **Capacidade de Carga Útil (Ida e Volta - Lua)** | **55 toneladas** (Sem reabastecer cislunar) |
 
 ---
 
-## 4. Risk Management
+## 📂 Estrutura do Código de Simulação
 
-| Threat | Probability | Mitigation | Expected Outcome |
-| --- | --- | --- | --- |
-| Cosmic Radiation | High | Shielding + optimized transit duration | Dose maintained within mission limits |
-| Reactor Failure | Low | 4x propulsion redundancy | Abort or continuation capability preserved |
-| ECLSS Failure | Low | Redundant life support and reserve capacity | Crew survival protection maintained |
-| MMOD Impact | Medium | Whipple shielding + operational avoidance | Reduced critical breach probability |
-| Psychological Stress | Medium | Artificial gravity, AI support, team selection | Improved long-duration crew resilience |
+O projeto é 100% modular e desenvolvido em Python para permitir a validação e otimização de parâmetros orbitais:
 
-**Risk posture**: The mission is designed around redundancy, operational margin, and system-level resilience.
+*   **`propulsion_system.py`**: Modula a física dos motores STP, o empuxo vetorial do cluster e o decaimento da potência térmica útil baseado na lei do quadrado inverso à medida que a nave se afasta do Sol.
+*   **`thermal_management.py`**: Controla o subsistema de gerenciamento térmico dos tanques de combustível, monitorando o consumo elétrico dos compressores ZBO e simulando vazamentos térmicos em cenários de contingência.
+*   **`trajectory_solver.py`**: Resolve as equações cinéticas de Tsiolkovsky, avaliando o consumo real de combustível em orçamentos de $\Delta v$ para missões lunares e interplanetárias.
 
 ---
 
-## 5. Strategic Value
+## 🛠️ Como Executar as Simulações
 
-1. **Economic Value**: Enables a long-term industrial pathway for deep-space transport and high-value off-world logistics
-2. **Scientific Value**: Supports high-capacity planetary science, biology, and habitat development on Mars
-3. **Civilizational Value**: Expands humanity beyond a single planetary surface
-4. **Industrial Value**: Creates a framework for reusable interplanetary transport and supporting infrastructure
-5. **Geopolitical Value**: Establishes a technological foundation for cislunar and Martian operations
+Certifique-se de ter o Python 3.10 ou superior instalado no seu sistema. Clone o repositório e execute o solucionador de missões:
 
----
+```bash
+# Clonar o repositório
+git clone https://github.com
+cd Ares_Aerospike_V3.1
 
-## 6. Premises and Scope
-
-This repository presents a conceptual systems-engineering study. The mission architecture, performance numbers, and operational assumptions are early-stage estimates intended for analysis, iteration, and future validation.
-
-### Main Premises
-- Mass and performance values are conceptual estimates
-- Mission timelines assume favorable launch windows and trajectory conditions
-- Subsystems are documented at architectural level rather than as final certified designs
-- Risk values are reference estimates, not operational guarantees
-- The repository is intended to evolve through simulation, validation, and refinement
+# Executar a simulação integrada da missão lunar V4.0
+python trajectory_solver.py
+```
 
 ---
 
-## 7. Methodology
+## 🗺️ Roteiro de Desenvolvimento (Roadmap para 2030)
 
-The project is structured in three levels:
-
-1. **Conceptual Architecture**  
-   Define mission goals, system boundaries, and major constraints
-
-2. **Engineering Verification**  
-   Validate mass, energy, trajectory, shielding, and redundancy assumptions
-
-3. **Simulation and Test Readiness**  
-   Build computational models, run failure analysis, and prepare subsystem validation
-
-All results should be reproducible and traceable to assumptions, models, or simulations.
-
----
-
-## 8. Validation Criteria
-
-The project will be considered technically mature when it satisfies the following criteria:
-
-- Closed mass balance with explicit margins
-- Mission profile consistent with the delta-v budget
-- Functional redundancy in propulsion, ECLSS, and control
-- Simulation-backed verification of thermal, structural, and radiation behavior
-- Automated tests for software and model integrity
-- Clear traceability between assumptions, calculations, and outputs
-
----
-
-## 9. Risks and Limitations
-
-This version still depends on:
-- High-temperature material validation
-- Propulsion performance verification
-- Radiation shielding analysis
-- Long-duration reliability studies
-- Logistical modeling for Earth and Mars operations
-
-For that reason, the values in this document should be interpreted as target architecture, not certified performance.
-
----
-
-## 10. Roadmap
-
-### Phase 1 — Concept
-- Define mission scope and constraints
-- Close mass and energy balance
-- Establish repository architecture and modeling standards
-
-### Phase 2 — Simulation
-- Simulate trajectory and mission windows
-- Model ECLSS, radiation, and thermal behavior
-- Evaluate redundancy and failure scenarios
-
-### Phase 3 — Prototype
-- Implement subsystem models
-- Add automated tests
-- Document results, assumptions, and limitations
-
-### Phase 4 — Consolidation
-- Conduct technical review
-- Standardize documentation
-- Prepare for public demonstration
-
----
-
-## 11. Repository Structure
-/
-├── README.md
-├── LICENSE
-├── docs/
-│   ├── mission_concept.md
-│   ├── assumptions.md
-│   ├── calculations.md
-│   ├── risks.md
-│   └── roadmap.md
-├── models/
-│   ├── propulsion/
-│   ├── mission_profile/
-│   ├── radiation/
-│   ├── eclss/
-│   └── mass_budget/
-├── simulations/
-├── analysis/
-├── tests/
-└── assets/
-
----
-
-## 12. Design Principles
-
-- Vision communicates purpose
-- Engineering communicates credibility
-- Assumptions must be explicit
-- Every number must be traceable
-- Every subsystem must be testable
-- Every claim must have a validation path
-
----
-
-## 13. Executive Summary
-
-ARES-STARSHIP V3.1 is a conceptual interplanetary transport platform built around reusable nuclear-thermal propulsion and long-duration crew survival.
-
-Its strength lies in the combination of mission ambition, systems thinking, and a clear strategic identity. The next step is to convert that vision into reproducible engineering evidence, simulation-backed validation, and disciplined technical documentation.
-
----
-
-## 14. Contributing and Validation
-
-Contributions are welcome in the following areas:
-- Mission analysis
-- Propulsion modeling
-- Thermal and structural simulation
-- Radiation shielding
-- ECLSS modeling
-- Software architecture
-- Verification and test coverage
-
-Every contribution should clearly state:
-- Which assumption it changes
-- Which calculation or model it affects
-- Which evidence supports the change
-- How the result can be reproduced
-
----
-
-*This repository presents a conceptual systems-engineering study. Numbers, assumptions, and mission outcomes are subject to refinement as the project evolves.*
+- [x] Pivotagem da matriz de propulsão (Nuclear $\rightarrow$ Térmica Solar)
+- [x] Otimização volumétrica dos tanques para Metano Líquido
+- [x] Modelagem do subsistema térmico Zero Boil-Off (ZBO)
+- [ ] Implementação do modelo de controle elétrico de energia da IA embarcada **ODIN**
+- [ ] Modelagem aerodinâmica fina para trajetórias de aerocaptura na atmosfera da Terra e de Marte
