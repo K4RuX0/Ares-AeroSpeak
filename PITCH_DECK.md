@@ -1,38 +1,40 @@
-# ARES V4.0 — QUANTITATIVE PITCH DECK
-**Advanced Financial Sizing & Interplanetary Market Capture Projections**
-*Target Window: 2026 - 2033 | Currency Unit: USD*
+# ARES V4.0 — MACRO ECONOMIC PROJECTIONS (2030 - 2040)
+**Deep Space Fleet Scaling, Cargo Monopolization & Asteroid Mining Economics**
+*Strategic Horizon: Post-2030 Expansion | Currency Unit: USD*
 
 ---
 
-## SLIDE 1: TOTAL ADDRESSABLE MARKET (TAM/SAM/SOM)
+## SLIDE 1: INDUSTRIAL SCALING & FLEET MULTIPLICATION (2030-2035)
 
-* Quantitative Market Segmentation for 2030 Cislunar Economy:
-  - TAM (Total Addressable Market): $42.0 Billion USD (Global space logistics).
-  - SAM (Serviceable Addressable Market): $12.5 Billion USD (Deep space/Lunar cargo).
-  - SOM (Serviceable Obtainable Market): $1.8 Billion USD (ARES initial capture).
+* Fleet Assets Multiplication Matrix:
+  - Year 2030: 2 Operational Airframes | 4 Missions/Year | Payload Moved: 220t.
+  - Year 2033: 8 Operational Airframes | 24 Missions/Year | Payload Moved: 1,320t.
+  - Year 2035: 18 Operational Airframes | 72 Missions/Year | Payload Moved: 3,960t.
 
-* Compound Annual Growth Rate (CAGR): Est. 14.2% driven by Artemis Accords.
-## SLIDE 2: VEHICLE UNIT ECONOMICS & REUSABILITY SIZING
+* Operational Turnaround Optimization:
+  - Launch Cadence: Reduced from 90 days to 14 days per hull via modular Iridium cores.
+  - Alcantara Pad Reuse: Automated ground cryo-cooling pipeline scales to 3 concurrent pads.
+## SLIDE 2: THE COST-KILLER LOGISTICS & FINANCIAL MARGINS (2030-2038)
 
-* Recurring Production Cost per Airframe (9m Hull): $38.2 Million USD.
-* Refurbishment Cost per Flight Node: $1.8 Million USD (Thanks to Iridium zero-corrosion).
-* Total Capital Expenditure per Asset: $40.0 Million USD lifecycle value.
+* Deep Space Freight Price Erosion Model (Beating Competitors by Scale):
+  - ARES V4.0 Projected Price per kg to LLO (2030): $2,000 / kg.
+  - ARES V4.0 Projected Price per kg to LLO (2035): $750 / kg.
+  - Competitor Chemical Target (2035 Baseline): $2,200 / kg (Limited by tanker overhead).
 
-* Fleet Depreciation Framework: Amortized over 25 flights per individual hull.
-* Net Marginal Operating Cost per Ton to Moon: $1,210 USD / kg.
-## SLIDE 3: FORWARD FINANCIAL PROJECTIONS (8-YEAR FINANCIAL MODEL)
+* Consolidated Financial Runway Projections:
+  - Year 2030 EBITDA: $85.0M | Net Profit Margin: 42.5% | Asset Value: $650M.
+  - Year 2035 EBITDA: $612.0M | Net Profit Margin: 51.0% | Asset Value: $4.2B.
+  - Year 2038 EBITDA: $1.45B | Net Profit Margin: 56.4% | Asset Value: $11.5B.
+## SLIDE 3: PHASE III - THE AEROMINER CAPTURE (2035-2040 STRATEGY)
 
-* Year 2027 (TRL-4 Lab Validation):
-  - Revenue: $0.0M | R&D Net Cash Burn: $12.5M | Valuation: $45.0M (Post-Seed).
+* Vertical Integration into Asteroid & Lunar Resource Extraction:
+  - Primary Target: Extraction of Platinum-Group Metals (PGM) and Rare Earth Elements.
+  - In-Situ Resource Utilization (ISRU): Space-refined propellant unlocks infinite delta-V.
 
-* Year 2029 (TRL-7 Orbital Demo - Alcantara):
-  - Revenue: $15.0M (Subscale payload) | Net Capex: $180.0M | Valuation: $220.0M.
+* Long-Term Macro Valuation Framework:
+  - Year 2030 Corporate Valuation: $1.2 Billion USD (Unicorn Status Achieved).
+  - Year 2035 Corporate Valuation: $8.5 Billion USD (Tier-1 Infrastructure Leader).
+  - Year 2040 Corporate Valuation: $45.0 Billion USD (Deep-Space Monopoly Infrastructure).
 
-* Year 2031 (Phase I Commercial - 4 Fleet Units Active):
-  - Revenue: $440.0M | Gross Margin (EBITDA): 44.5% ($195.8M) | Valuation: $1.2B.
-
-* Year 2033 (Phase II Mars Fleet - 8 Fleet Units Active):
-  - Revenue: $1.12B | Gross Margin (EBITDA): 51.2% ($573.4M) | Valuation: $3.8B.
-
-Ask: $22M Seed Round to lock TRL-4 hardware gates within 18 months.
+Long-Term Financial Architecture Locked. Ready for Scale.
 Contact: ranyellson@gmail.com
